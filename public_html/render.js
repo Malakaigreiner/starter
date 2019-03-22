@@ -13,9 +13,14 @@ function hashCode(s){
 }
 
 function setup() {
-  createCanvas(500, 400, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  var answer1 = "1"
+  var answer2 = "2"
+  var answer3 = "3"
+  var answer4 = "4"
+  var answer5 = "5"
 
-  let futchSeed = hashCode('ok') + hashCode('ok') + hashCode('ok');
+  let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
    backa = random(0,255);
    backb = random(0,255);
    backc = random(0,255);
@@ -39,7 +44,7 @@ function setup() {
 function place(position){
 
   //json object
-  let futchSeed = hashCode('what') + hashCode('thebeat') + hashCode('around');
+let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer4) + hashCode(answer5);
   let storedFutch = {
     lat: position.latitude,
     lon: position.longitude,
