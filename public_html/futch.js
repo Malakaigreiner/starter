@@ -1,3 +1,7 @@
+function preload(){
+	img = loadImage('https://media.giphy.com/media/YWbM6nDnBo8X7WIKpl/giphy.gif');
+}
+
 class blob {
 
   constructor(uniqueID) {
@@ -5,6 +9,7 @@ class blob {
     this.seed = uniqueID
 
     randomSeed(this.seed);
+
 
     this.size = random(3, 5)
     this.scale = random(15, 30)
@@ -17,13 +22,15 @@ class blob {
 
 
     let r = random(100)
-    if (r <= 33) {
+    if (r <= 25) {
       this.shape = 'torus'
-    } else if (r > 33 && r <= 66) {
+    } else if (r > 25 && r <= 50 && r < 75) {
       this.shape = 'box'
-    } else {
+    } else if (r > 25 && r > 50 && r <= 75){
       this.shape = 'sphere'
-    }
+    } else if (r > 25 && r > 50 && r > 75 && r <= 100) {
+			this.shape = 'ellipsoid'
+		}
 
 
     for (let x = 0; x < this.size; x++) {
@@ -31,7 +38,6 @@ class blob {
         for (let z = 0; z < this.size; z++) {
 
           if (random(0, 6) > 3) {
-
             let vec = createVector(x, y, z)
             this.points.push(vec)
 
@@ -49,12 +55,16 @@ class blob {
 
   } //end constructor
 
+
   render() {
-    noStroke()
+    noStroke();
     angleMode(DEGREES);
+    // normalMaterial();
     // ambientLight(200)
-    directionalLight(255, 255, 255, 0, 0, -1)
-    specularMaterial(this.c);
+    // directionalLight(255, 255, 255, 0, 0, -1)
+    fill(this.c);
+    // stroke();
+    // texture(img);
     noiseSeed(this.seed)
 
     for (let i = 0; i < this.points.length; i++) {
@@ -72,8 +82,9 @@ class blob {
             box(this.scale, this.scale)
           } else if (this.shape == 'sphere') {
             sphere(this.scale)
-          }
-
+          } else if (this.shape == 'ellipsoid'){
+						ellipsoid(this.scale, this.scale, this.scale);
+					}
         pop()
 
       }
