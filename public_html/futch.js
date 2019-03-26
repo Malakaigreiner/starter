@@ -1,8 +1,4 @@
-function preload(){
-	img = loadImage('https://media.giphy.com/media/YWbM6nDnBo8X7WIKpl/giphy.gif');
-}
-
-class blob {
+class futchure {
 
   constructor(uniqueID) {
 
@@ -20,7 +16,7 @@ class blob {
     this.points = []
 
 
-
+    //decides which shape to show
     let r = random(100)
     if (r <= 25) {
       this.shape = 'torus'
@@ -32,7 +28,7 @@ class blob {
 			this.shape = 'ellipsoid'
 		}
 
-
+    //draws a bunch of chosen shape in this structure
     for (let x = 0; x < this.size; x++) {
       for (let y = 0; y < this.size; y++) {
         for (let z = 0; z < this.size; z++) {
@@ -60,11 +56,7 @@ class blob {
     noStroke();
     angleMode(DEGREES);
     // normalMaterial();
-    // ambientLight(200)
-    // directionalLight(255, 255, 255, 0, 0, -1)
     fill(this.c);
-    // stroke();
-    // texture(img);
     noiseSeed(this.seed)
 
     for (let i = 0; i < this.points.length; i++) {
