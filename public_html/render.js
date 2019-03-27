@@ -27,7 +27,7 @@ function setup() {
   backb = random(0,255);
   backc = random(0,255);
 
-  intervalCurrentPosition(positionPing,5000);
+  intervalCurrentPosition(positionPing, );
   //fill these answers w/ audience input to create unique hashcode
 
   //create futchSeed with audience input
