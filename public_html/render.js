@@ -27,7 +27,7 @@ function setup() {
   backb = random(0,255);
   backc = random(0,255);
 
-  intervalCurrentPosition(positionPing, );
+  intervalCurrentPosition(positionPing,5000);
   //fill these answers w/ audience input to create unique hashcode
 
   //create futchSeed with audience input
@@ -82,7 +82,7 @@ function draw() {
 
 function positionPing(position){
   let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
-  getrid = new Drop(position.latitude,position.longitude,futchSeed );
+  getrid = new Drop( position.latitude,position.longitude,futchSeed );
   console.log(getrid);
   // console.log(loc.includes(place.latitude, place.longitude, futchSeed));
   // distance = calcGeoDistance(locationData.latitude, locationData.longitude, this.objectLong, this.objectLat, 'mi')
