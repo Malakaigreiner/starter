@@ -11,6 +11,9 @@ const server = require('http').Server( app );
 app.use(express.static('public_html'));
 
 //turn on our server so it can recieve requests
-server.listen(3000, function(){
+
+let port = process.env.PORT || 3000;
+
+server.listen(port, function(){
   console.log('app is listening on port 3000!')
 })
