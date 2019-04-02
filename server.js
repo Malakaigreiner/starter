@@ -4,7 +4,7 @@ const io = require('socket.io');
 // make socket.io available
 const app = express();
 //turn on express
-const server = require('https').Server( app );
+const server = require('http').Server( app );
 //make a server to handle tcp connections, and use the app (our express instance) to handle end points & requests
 
 //serve out files in our public_html folder
