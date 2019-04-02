@@ -94,6 +94,8 @@ function mousePressed(){
     })
 }
 
+
+
 // function positionPing(position){
 //   let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
 //   getrid = new Drop( position.latitude,position.longitude,futchSeed );
