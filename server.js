@@ -31,7 +31,7 @@ function recallData(){
   });
 }
 
-recallData();
+console.log( recallData() )
 
 
 //store some new data
