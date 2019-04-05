@@ -7,7 +7,7 @@ class futchure {
     randomSeed(this.seed);
 
     this.size = random(4, 6)
-    this.scale = random(20, 30)
+    this.scale = random(10, 15)
     this.c = color(random(0, 255), random(0, 255), random(0, 255))
     this.rx = []
 
@@ -56,13 +56,15 @@ class futchure {
     angleMode(DEGREES);
     // normalMaterial();
     fill(this.c);
-    noiseSeed(this.seed)
+    noiseSeed(this.seed);
+    rotateZ(frameCount * .3);
+    rotateX(frameCount * .3);
+    rotateY(frameCount * .3);
 
     for (let i = 0; i < this.points.length; i++) {
 
       if (this.points[i] !== 'skip') {
         push()
-
           rotateX(map(noise(i), 0, 1, 0, 360));
           translate(this.points[i].x * this.scale, this.points[i].y * this.scale, this.points[i].z * this.scale)
           // rotate(this.rx,this.ry,this.rz)
@@ -79,12 +81,8 @@ class futchure {
         pop()
 
       }
-
-
     } //end points loop
-
   } //close render
-
 
 
 

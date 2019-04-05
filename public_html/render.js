@@ -1,18 +1,28 @@
+// let socket = io.connect();
+
 let futch;
 let futchSeed;
 let backa;
 let backb;
 let backc;
-let getrid;
 let position;
 let locationData;
 let x;
 let y;
-var answer1 = "h2345234523452354234ey";
-var answer2 = "ish23452342435234h";
-var answer3 = "ta24352345234sdfhe";
-var answer4 = "cos1223143545t";
-var answer5 = "dufs23452345234523452dhio";
+// var answer1 = "france";
+// var answer2 = "here, now";
+// var answer3 = "after everything else";
+// var answer4 = "a result";
+// var answer5 = "inside";
+
+var answer1 = "duncan";
+var answer2 = "b";
+var answer3 = "d";
+var answer4 = "d";
+var answer5 = "c";
+let dropButton;
+
+let gen = true;
 
 
 var loc = []
@@ -26,6 +36,7 @@ function setup() {
   backa = random(0,255);
   backb = random(0,255);
   backc = random(0,255);
+  let fr = 12;
 
   // intervalCurrentPosition(positionPing, 5000);
   //fill these answers w/ audience input to create unique hashcode
@@ -73,6 +84,7 @@ futch = new futchure( futchSeed );
 // }
 
 
+
 function draw() {
   background(backa,backb,backc,30);
   orbitControl();
@@ -81,18 +93,67 @@ function draw() {
 }
 
 
-function mousePressed(){
 
-    getCurrentPosition(function(position){
-      console.log(position);
+////drop button / function
 
-      let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
-      getrid = new Drop( position.latitude,position.longitude,futchSeed );
-      // console.log(getrid);
+function dropMe(){
+
+  // Every frame increase the rotation a little.
+  getCurrentPosition(function(position){
+
+    let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
+    // getrid = new Drop( position.latitude,position.longitude,futchSeed );
+    // console.log(getrid);
+
+    //prep the data as a json object to store on the server
+    let packedData = {
+      "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5),
+      "lat": position.latitude,
+      "lon": position.longitude
+
+    }
+
+    console.log(packedData);
+
+    //use socket.io to send the packed data to the server
+    // socket.emit('storeData', packedData)
 
 
-    })
+  })
 }
+//
+// function mousePressed(){
+//
+//
+// //this is the only way you can get the storeage:
+// // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
+// socket.emit('recallData',function(storage){
+//   console.log(storage)
+// })
+
+
+// function dropMe(){ //make a blockade so the user can only submit one futch.
+//     getCurrentPosition(function(position){
+//       console.log(position);
+//
+//       let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
+//       // getrid = new Drop( position.latitude,position.longitude,futchSeed );
+//       // console.log(getrid);
+//
+//       //prep the data as a json object to store on the server
+//       let packedData = {
+//         "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5),
+//         "lat": position.latitude,
+//         "lon": position.longitude
+//
+//       }
+//
+//       //use socket.io to send the packed data to the server
+//       socket.emit('storeData', packedData)
+//
+//
+//     })
+// }
 
 
 
