@@ -46,7 +46,7 @@ function setup() {
 let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
   //build a blob with the futchSeed as it's random seed / unique ID
 futch = new futchure( futchSeed );
-document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+// document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 
   // what we need for the server ultimately is a json object:
   //generate this when the 'drop' their object
