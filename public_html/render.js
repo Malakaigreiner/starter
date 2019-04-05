@@ -16,10 +16,11 @@ let y;
 // var answer5 = "inside";
 
 var answer1 = "duncan";
-var answer2 = "b";
-var answer3 = "d";
-var answer4 = "d";
-var answer5 = "c";
+var answer2 = "here";
+var answer3 = "always here";
+var answer4 = "a multiplication";
+var answer5 = "many, many, many";
+var answer6 = "make the choice";
 let dropButton;
 
 let gen = true;
@@ -32,7 +33,7 @@ function hashCode(s){
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(700, windowHeight, WEBGL);
   backa = random(0,255);
   backb = random(0,255);
   backc = random(0,255);
@@ -43,7 +44,7 @@ function setup() {
 
   //create futchSeed with audience input
 
-let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
+let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
 futch = new futchure( futchSeed );
 // document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
@@ -102,13 +103,13 @@ function dropMe(){
   // Every frame increase the rotation a little.
   getCurrentPosition(function(position){
 
-    let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
+    let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5) + hashCode(answer6);
     // getrid = new Drop( position.latitude,position.longitude,futchSeed );
     // console.log(getrid);
 
     //prep the data as a json object to store on the server
     let packedData = {
-      "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5),
+      "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5) + hashCode(answer6),
       "lat": position.latitude,
       "lon": position.longitude
 
