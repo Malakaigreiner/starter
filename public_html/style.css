@@ -1,9 +1,20 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  max-width: 100%;
-  max-height: 50%;
+ height: 100%;
+}
+
+body{
+
+  margin: 0;
+display: flex;
+
+/* This centers our sketch horizontally. */
+justify-content: center;
+
+/* This centers our sketch vertically. */
+align-items: center;
 }
 
 button.drop {
