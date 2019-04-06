@@ -15,12 +15,12 @@ let y;
 // var answer4 = "a result";
 // var answer5 = "inside";
 
-var answer1 = "duncan";
-var answer2 = "here";
-var answer3 = "always here";
-var answer4 = "a multiplication";
-var answer5 = "many, many, many";
-var answer6 = "make the choice";
+var answer1 = "maasdfadfd";
+var answer2 = "rasdfasadfadffddfadtke";
+var answer3 = "mafsdfadsfakes";
+var answer4 = "reaafsdadsfaadfasdfadsfasddsl";
+var answer5 = "mesadsfasfdadsfadfsy";
+var answer6 = "rop3q4523452345234es";
 let dropButton;
 
 let gen = true;
@@ -88,7 +88,7 @@ futch = new futchure( futchSeed );
 
 
 function draw() {
-  background(backa,backb,backc,30);
+  background(backa+mouseY,backa+mouseX,backc);
   orbitControl();
   futch.render();
   // drop.getData();
