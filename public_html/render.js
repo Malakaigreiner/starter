@@ -33,7 +33,7 @@ function hashCode(s){
 }
 
 function setup() {
-  var canvas = createCanvas(400,700, WEBGL);
+  var canvas = createCanvas(innerWidth,innerHeight, WEBGL);
   canvas.parent('sketch-holder');
   backa = random(0,255);
   backb = random(0,255);
