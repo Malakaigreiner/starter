@@ -88,7 +88,7 @@ futch = new futchure( futchSeed );
 
 
 function draw() {
-  background(backa+mouseY,backa+mouseX,backc);
+  background(backa+mouseY,backb,backc);
   orbitControl();
   futch.render();
   // drop.getData();

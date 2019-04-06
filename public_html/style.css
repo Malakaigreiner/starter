@@ -18,7 +18,7 @@ button.drop {
 	text-decoration:none;
   position:absolute;
   bottom: 20px;
-  left: 300px;
+  left: 50%;
   top: 90%;
   /* margin-top: -90px; */
 }
