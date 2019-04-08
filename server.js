@@ -59,9 +59,6 @@ io.on('connection', function(socket){
   })
 
 
-// socket.on('ferret', function (name, word, fn) {
-    // fn(name + ' says ' + word);
-  // });
 
   //give the storage list back to the clinet
   socket.on('recallData', function(cb){

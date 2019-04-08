@@ -7,7 +7,7 @@ class futchure {
     randomSeed(this.seed);
 
     this.size = random(4, 6)
-    this.scale = random(20, 25)
+    this.scale = random(10, 15)
     this.c = color(random(0, 255), random(0, 255), random(0, 255))
     this.rx = []
 
@@ -57,7 +57,7 @@ class futchure {
     rotateZ(frameCount * .3);
     rotateX(frameCount * .3);
     rotateY(frameCount * .3);
-    scale(1.2);
+  
 
     for (let i = 0; i < this.points.length; i++) {
 

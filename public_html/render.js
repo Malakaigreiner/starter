@@ -1,4 +1,4 @@
-// let socket = io.connect();
+let socket = io.connect();
 
 let futch;
 let futchSeed;
@@ -9,11 +9,6 @@ let position;
 let locationData;
 let x;
 let y;
-// var answer1 = "france";
-// var answer2 = "here, now";
-// var answer3 = "after everything else";
-// var answer4 = "a result";
-// var answer5 = "inside";
 
 var answer1 = "maasdfadfd";
 var answer2 = "rasdfasadfadffddfadtke";
@@ -23,69 +18,31 @@ var answer5 = "mesadsfasfdadsfadfsy";
 var answer6 = "rop3q4523452345234es";
 let dropButton;
 
-let gen = true;
-
 
 var loc = []
 
 function hashCode(s){
+
   return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+
 }
 
 function setup() {
-  var canvas = createCanvas(innerWidth,innerHeight, WEBGL);
-  canvas.parent('sketch-holder');
+
+  var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
   backa = random(0,255);
   backb = random(0,255);
   backc = random(0,255);
   let fr = 12;
 
-  // intervalCurrentPosition(positionPing, 5000);
-  //fill these answers w/ audience input to create unique hashcode
 
-  //create futchSeed with audience input
 
-let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
+  let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
-futch = new futchure( futchSeed );
-// document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+  futch = new futchure( futchSeed );
 
-  // what we need for the server ultimately is a json object:
-  //generate this when the 'drop' their object
-  // let dataToStore = {
-  //   'lat': 93.930384234,
-  //   'lon': -192.9342038424,
-  //   'seed': -1335396314
-  // }
 
 }
-
-// function place(position){
-//
-//   // var answer1 = ""
-//   // var answer2 = ""
-//   // var answer3 = ""
-//   // var answer4 = ""
-//   // var answer5 = ""
-//   //
-//   // let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
-//
-// // //json object
-// // let storedFutch = {
-// //     lat: position.latitude,
-// //     lon: position.longitude,
-// //     seed: futchSeed
-// //   }
-// //
-// //   loc.push(storedFutch);
-// //   print(loc);
-// //   text(position.latitude,100,100);
-// //   text(position.longitude,100,200);
-// //   text(futchSeed, 100, 300);
-// //   //when this button is clicked, store the lat and long you're currently at in an array
-//
-// }
-
 
 
 function draw() {
@@ -101,12 +58,9 @@ function draw() {
 
 function dropMe(){
 
-  // Every frame increase the rotation a little.
   getCurrentPosition(function(position){
 
     let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5) + hashCode(answer6);
-    // getrid = new Drop( position.latitude,position.longitude,futchSeed );
-    // console.log(getrid);
 
     //prep the data as a json object to store on the server
     let packedData = {
@@ -114,60 +68,37 @@ function dropMe(){
       "lat": position.latitude,
       "lon": position.longitude
 
-    }
+    } //close initial pack
 
-    console.log(packedData);
+  console.log(packedData);
 
-    //use socket.io to send the packed data to the server
-    // socket.emit('storeData', packedData)
+  //use socket.io to send the packed data to the server
+  socket.emit('storeData', packedData)
 
 
+}) //close packing function
+}//close button operation
+
+//
+function searchLand(){
+
+  //this is the only way you can get the storeage:
+  // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
+  function positionPing(position){
+    socket.emit('recallData',function(storage){
+      console.log(storage);
+      intervalCurrentPosition(positionPing, 5000);
+      // check if storage contains
   })
+  print("lat: " + position.latitude);
+  print("long: " + position.longitude);
 }
+  var distance = calcGeoDistance(locationData.latitude, locationData.longitude, this.storedData.lat, this.storedData.lon, 'mi')
+  // check your lat/long every couple seconds for distance to one of a places
+  // if yes, show a green circle
+  // if no, show a red circle
+  // if (distance =< 15 feet  ) {
+  //  futch.render(the seed at current lat/lon);
+  // }
 //
-// function mousePressed(){
-//
-//
-// //this is the only way you can get the storeage:
-// // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
-// socket.emit('recallData',function(storage){
-//   console.log(storage)
-// })
-
-
-// function dropMe(){ //make a blockade so the user can only submit one futch.
-//     getCurrentPosition(function(position){
-//       console.log(position);
-//
-//       let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
-//       // getrid = new Drop( position.latitude,position.longitude,futchSeed );
-//       // console.log(getrid);
-//
-//       //prep the data as a json object to store on the server
-//       let packedData = {
-//         "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5),
-//         "lat": position.latitude,
-//         "lon": position.longitude
-//
-//       }
-//
-//       //use socket.io to send the packed data to the server
-//       socket.emit('storeData', packedData)
-//
-//
-//     })
-// }
-
-
-
-// function positionPing(position){
-//   let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5);
-//   getrid = new Drop( position.latitude,position.longitude,futchSeed );
-//   console.log(getrid);
-//   // console.log(loc.includes(place.latitude, place.longitude, futchSeed));
-//   // distance = calcGeoDistance(locationData.latitude, locationData.longitude, this.objectLong, this.objectLat, 'mi')
-//   // // check your lat/long every couple seconds for distance to one of a places
-//   // // if yes, show a green circle
-//   // // if no, show a red circle
-//   // print(distace);
-// }
+}
