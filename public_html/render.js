@@ -112,8 +112,9 @@ function positionPing(position){
       if (storedLat == position.latitude) {
         console.log("FOUND!");
       }
-      console.log("SEARCHING..."); 
+      console.log("SEARCHING...");
     });
+  });
 
         // var found = storage.find(
         //   function(storedData){
