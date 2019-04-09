@@ -105,11 +105,11 @@ function positionPing(position){
       });
   console.log(found);
 
-   if (found == true){
+   if (storedData.lat == position.latitude){
      storedFutch = new futchure(storedData.hash)
-     render.storedFutch();
+     storedFutch.render();
    } else {
-     
+     futch.render();
    }
 
   // print(distance);
