@@ -55,7 +55,7 @@ answer6 = random(10,10000);
 function draw() {
   background(backa+mouseY,backb,backc);
   orbitControl();
-  // futch.render();
+  futch.render();
 }
 
 
@@ -95,18 +95,14 @@ function positionPing(position){
   socket.emit('recallData', function(storage){
 
     storage.find(function(storedData) {
-var newNew = new futchure(storedData.hash);
+// var newNew = new futchure(storedData.hash);
 var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
       if ( distance <= .003999999)
          // && storedLon.lot == position.longitude
       {
-<<<<<<< HEAD
         // delete futch.render();
 
-        newNew.render();
-=======
-        var newNew = new futchure(storedData.hash);
->>>>>>> parent of 3ebc65e... ok
+        // newNew.render();
         // var found = new futchure( storedHash );
         // found.render();
         // print(storedData.hash)
