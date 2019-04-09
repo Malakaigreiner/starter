@@ -106,16 +106,18 @@ function positionPing(position){
 
   // console.log(position.latitude);
 
-  socket.emit('recallData', function findData(storage, posLat){
+  socket.emit('recallData', function(storage){
 
-    for (var i = 1; i < storage.find(); i++){
-      if (storage[i] == posLat){
-        return i;
-      }
-      return -1;
-    }
-  console.log(findData.storage)
-});
+        var found = storage.find
+          (function(storedData){
+
+            return storedData.lat == position.latitude
+            return storedData.lon == position.longitude
+            return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+
+          });
+
+  });
   //     var found = storage.find(function(storedData){
   //
   //         return storedData.lat == position.latitude
