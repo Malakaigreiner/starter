@@ -81,7 +81,7 @@ function dropMe(){
 socket.emit('recallData', function(storage){
   function lookFor(storedLat) {
       return storedLat.lat = 19834
-      console.log(storage.find(searchFor));
+      console.log(storage.find(lookFor));
   }
 
 });
