@@ -82,8 +82,8 @@ socket.emit('recallData', function(storage){
 
 
     function lookFor(storedLat) {
-        // intervalCurrentPosition(positionPing, 5000);
-        return storedLat.lat = position.latitude
+        // getCurrentPosition(position)
+        return storedLat.lat = '19834'
     }
 console.log(storage.find(lookFor));
 
