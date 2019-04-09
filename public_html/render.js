@@ -87,20 +87,19 @@ function dropMe(){
 
 }//close button operation
 
-function isBlob(storedData, index, array) {
-  var currentPos = 2;
-  while (start <= Math.sqrt(storedData)) {
-    if (storedData == currentPos) {
-      return false;
-    }
-  }
-  return storedData.hash;
-}
-
-console.log(storage.find(isBlob));
-
+// function isBlob(storedData, index, array) {
+//   var currentPos = 2;
+//   while (start <= Math.sqrt(storedData)) {
+//     if (storedData == currentPos) {
+//       return false;
+//     }
+//   }
+//   return storedData.hash;
+// }
 //
-// function searchLand(){
+// console.log(storage.find(isBlob));
+
+
 
 function positionPing(position){
 
@@ -108,21 +107,29 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-        var found = storage.find(
-          function(storedData){
+    storage.find(function(storedLat, storedLon, storedHas) {
 
-            return storedData.lat == position.latitude
-            return storedData.lon == position.longitude
-            return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+      if (storedLat == position.latitude) {
+        console.log("FOUND!");
+      }
+      console.log("SEARCHING..."); 
+    });
 
-          }
-          function checkDistance(){
-            var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
-            	print(distance);
-          }
-        );
+        // var found = storage.find(
+        //   function(storedData){
+        //
+        //     return storedData.lat == position.latitude
+        //     return storedData.lon == position.longitude
+        //     return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+        //
+        //   }
+        //   function checkDistance(){
+        //     var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+        //     	print(distance);
+        //   }
+        // );
 
-  });
+  // });
   //     var found = storage.find(function(storedData){
   //
   //         return storedData.lat == position.latitude
