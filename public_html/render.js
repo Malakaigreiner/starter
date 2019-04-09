@@ -94,10 +94,14 @@ function positionPing(position){
 
       function lookFor(storedLat) {
 
-          return storedLat.lat === position.latitude;
+          if (storedLat.lat === position.latitude){
+            futch.render(storedLat.hash);
+          } else {
+            return false;
+          }
 
       }
-  print(":-)" + (storage.find(lookFor)));
+  console.log(storage.find(lookFor));
 
   });
 }
