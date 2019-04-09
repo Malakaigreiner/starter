@@ -85,7 +85,6 @@ socket.emit('recallData', function(storage){
   }
 
 });
-console.log(storage);
 }//close button operation
 
 //
