@@ -12,9 +12,9 @@ const fs = require('fs'); // make the file system available
 
 let storage = [
   {
-    "lat": 123412341,
-    "lon": 12341234123,
-    "hash": 1234123413,
+    "lat": 0,
+    "lon": 0,
+    "hash": 0,
   },
 
 ]

@@ -92,9 +92,10 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-      function lookFor(storedLat) {
+      function lookFor(storedLat, storedLon, storedHash) {
           // getCurrentPosition(position)
-
+          return storedHash.hash = hash
+          return storedLon.lon = position.longitude
           return storedLat.lat = position.latitude
       }
   console.log(storage.find(lookFor));
