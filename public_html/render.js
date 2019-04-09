@@ -95,7 +95,7 @@ function positionPing(position){
       function lookFor(storedLat) {
 
           if (storedLat.lat === position.latitude){
-            futch.render(storedLat.hash);
+            return "nice";
           } else {
             return false;
           }
