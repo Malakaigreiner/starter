@@ -81,15 +81,12 @@ function dropMe(){
 socket.emit('recallData', function(storage){
 
 
-  function positionPing(position){
-
-
     function lookFor(storedLat) {
+        intervalCurrentPosition(positionPing, 5000);
         return storedLat.lat = position.latitude
     }
 console.log(storage.find(lookFor));
 
-  }
 });
 
 
