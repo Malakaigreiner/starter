@@ -19,9 +19,9 @@ class futchure {
     let r = random(100)
     if (r >= 33) {
       this.shape = 'torus'
-    } else if  (r > 33 && r <= 66){
+    } else if  (r > 33 && r >= 66){
       this.shape = 'sphere'
-    } else if (r > 33 && r > 66 && r <= 100) {
+    } else if (r > 33 && r > 66 && r >= 100) {
 			this.shape = 'cone'
 		}
 
