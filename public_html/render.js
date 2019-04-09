@@ -98,7 +98,7 @@ function positionPing(position){
 var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
       if ( distance > .002)
          // && storedLon.lot == position.longitude
-       ) {
+      {
         // var found = new futchure( storedHash );
         // found.render();
         // print(storedData.hash)
