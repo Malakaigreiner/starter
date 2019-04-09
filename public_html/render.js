@@ -82,11 +82,11 @@ function dropMe(){
 //
 function searchLand(){
   socket.emit('recallData', function(storage){
-    function searchLand(store) {
+    function searchFor(store) {
         return store.lat === '19834'
     }
 
-    console.log(storage.find(searchLand));
+    console.log(storage.find(searchFor));
 });
 
   // {
