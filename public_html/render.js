@@ -79,11 +79,24 @@ function dropMe(){
 }) //close packing function
 
 socket.emit('recallData', function(storage){
-  function lookFor(storedLat) {
-      return storedLat.lat = '19834'
+
+
+  function positionPing(position){
+
+
+    function lookFor(storedLat) {
+        return storedLat.lat = position.latitude
+    }
+
+
   }
 console.log(storage.find(lookFor));
 });
+
+
+
+
+
 }//close button operation
 
 //
