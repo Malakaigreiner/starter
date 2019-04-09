@@ -100,9 +100,13 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
       if ( distance <= .003999999)
          // && storedLon.lot == position.longitude
       {
+<<<<<<< HEAD
         // delete futch.render();
 
         newNew.render();
+=======
+        var newNew = new futchure(storedData.hash);
+>>>>>>> parent of 3ebc65e... ok
         // var found = new futchure( storedHash );
         // found.render();
         // print(storedData.hash)
