@@ -9,7 +9,12 @@ let position;
 let locationData;
 let x;
 let y;
-
+let answer1;
+let answer2;
+let answer3;
+let answer4;
+let answer5;
+let answer6;
 let dropButton;
 let storedLat;
 let storage;
@@ -25,12 +30,12 @@ function hashCode(s){
 
 function setup() {
 
-  var answer1 = random(10,10000);
-  var answer2 = random(10,10000);
-  var answer3 = random(10,10000);
-  var answer4 = random(10,10000);
-  var answer5 = random(10,10000);
-  var answer6 = random(10,10000);
+answer1 = random(10,10000);
+answer2 = random(10,10000);
+answer3 = random(10,10000);
+answer4 = random(10,10000);
+answer5 = random(10,10000);
+answer6 = random(10,10000);
 
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
   backa = random(0,255);
