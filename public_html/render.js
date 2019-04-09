@@ -16,7 +16,7 @@ let answer4;
 let answer5;
 let answer6;
 let dropButton;
-let storedLat;
+let storedData;
 let storage;
 // let futchure;
 
@@ -49,7 +49,6 @@ answer6 = random(10,10000);
   let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
   futch = new futchure( futchSeed );
-
 
 }
 
@@ -98,20 +97,25 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-      var found = storage.find(function(storedLat){
+      var found = storage.find(function(storedData){
 
-          return storedLat.lat == position.latitude
-          return storedLat.lon == position.latitude
-          return storedLat.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+          return storedData.lat == position.latitude
+          return storedData.lon == position.latitude
+          return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
 
       });
   console.log(found);
   // print(distance);
-
-
   });
+
 }
 
+// function checkDistance(){
+//
+//   var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+//   	print(distance);
+//
+// }
 
   // {
   //   function positionPing(position){
