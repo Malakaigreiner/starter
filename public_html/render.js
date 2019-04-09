@@ -86,7 +86,7 @@ function searchLand(){
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
   function positionPing(position){
-
+    print(position.latitude)
     socket.emit('recallData',function(storage){
 
       var found =
@@ -110,8 +110,5 @@ function searchLand(){
   print("lat: " + position.latitude);
   print("long: " + position.longitude);
 }
-  // check your lat/long every couple seconds for distance to one of a places
-  // if yes, show a green circle
-  // if no, show a red circle
 
 }
