@@ -101,11 +101,11 @@ function positionPing(position){
       var found = storage.find(function(storedLat){
 
           return storedLat.lat == position.latitude
-
+          return storedLat.lon == position.latitude
       });
 
   console.log(found);
-  // var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
 
   });
 }
