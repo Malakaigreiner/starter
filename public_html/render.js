@@ -82,7 +82,7 @@ function dropMe(){
 //
 function searchLand(){
 
-
+console.log(searchLand);
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
   function positionPing(position){
