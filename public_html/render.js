@@ -10,12 +10,6 @@ let locationData;
 let x;
 let y;
 
-var answer1 = random(1,10,000);
-var answer2 = random(1,10,000);
-var answer3 = random(1,10,000);
-var answer4 = random(1,10,000);
-var answer5 = random(1,10,000);
-var answer6 = random(1,10,000);
 let dropButton;
 let storedLat;
 let storage;
@@ -31,6 +25,13 @@ function hashCode(s){
 
 function setup() {
 
+  var answer1 = random(10,10000);
+  var answer2 = random(10,10000);
+  var answer3 = random(10,10000);
+  var answer4 = random(10,10000);
+  var answer5 = random(10,10000);
+  var answer6 = random(10,10000);
+
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
   backa = random(0,255);
   backb = random(0,255);
@@ -40,7 +41,7 @@ function setup() {
   intervalCurrentPosition(positionPing, 5000);
 
 
-  let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
+  let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer5) + hashCode(""+answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
   futch = new futchure( futchSeed );
 
