@@ -17,12 +17,12 @@ class futchure {
 
     //decides which shape to show
     let r = random(100)
-    if (r <= 33) {
+    if (r >= 33) {
       this.shape = 'torus'
     } else if  (r > 33 && r <= 66){
       this.shape = 'sphere'
     } else if (r > 33 && r > 66 && r <= 100) {
-			this.shape = 'ellipsoid'
+			this.shape = 'cone'
 		}
 
     //draws a bunch of chosen shape in this structure
@@ -73,8 +73,8 @@ class futchure {
             torus(this.scale, this.scale)
           } else if (this.shape == 'sphere') {
             sphere(this.scale)
-          } else if (this.shape == 'ellipsoid'){
-						ellipsoid(this.scale, this.scale, this.scale);
+          } else if (this.shape == 'cone'){
+						ellipsoid(this.scale, this.scale);
 					}
         pop()
 
