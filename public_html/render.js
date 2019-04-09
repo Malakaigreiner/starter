@@ -102,7 +102,7 @@ function positionPing(position){
 
           return storedLat.lat == position.latitude
 
-      }
+      });
 
   console.log(found);
   // var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
