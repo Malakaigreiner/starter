@@ -94,16 +94,18 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-    storage.find(function(storedLat) {
+    storage.find(function(storedData) {
 
-      if (storedLat.lat == position.latitude
+      if (storedData.lat == position.latitude
          // && storedLon.lot == position.longitude
        ) {
         // var found = new futchure( storedHash );
         // found.render();
-        console.log("found!")
+        print(storedData.hash)
+
       }
-      console.log("searching....");
+      var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
+      print(distance);
     });
   });
 
@@ -116,8 +118,7 @@ function positionPing(position){
         //
         //   }
         //   function checkDistance(){
-        //     var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
-        //     	print(distance);
+        //
         //   }
         // );
 
