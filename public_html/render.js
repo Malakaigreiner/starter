@@ -41,7 +41,7 @@ function setup() {
   intervalCurrentPosition(positionPing, 5000);
 
 
-  let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer5) + hashCode(""+answer6);
+  let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
   futch = new futchure( futchSeed );
 
@@ -64,11 +64,11 @@ function dropMe(){
 
   getCurrentPosition(function(position){
 
-    let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5) + hashCode(answer6);
+    let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
 
     //prep the data as a json object to store on the server
     let packedData = {
-      "hash": hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5) + hashCode(answer6),
+      "hash": hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6),
       "lat": position.latitude,
       "lon": position.longitude
 
