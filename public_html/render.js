@@ -96,7 +96,9 @@ function positionPing(position){
 
     storage.find(function(storedLat, storedLon, storedHash) {
 
-      if (storedLat.lat == position.latitude && storedLon.lot == position.longitude) {
+      if (storedLat.lat == position.latitude
+         // && storedLon.lot == position.longitude
+       ) {
         // var found = new futchure( storedHash );
         // found.render();
         console.log("found!")
