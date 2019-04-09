@@ -101,13 +101,19 @@ function positionPing(position){
        ) {
         // var found = new futchure( storedHash );
         // found.render();
-        print(storedData.hash)
-
+        // print(storedData.hash)
+        print("found!");
       }
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
       print(distance);
+      //
+      // if (distance >= .002){
+      //
+      // } else {
+      //
     });
-  });
+    });
+
 
         // var found = storage.find(
         //   function(storedData){
