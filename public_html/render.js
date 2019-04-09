@@ -17,7 +17,6 @@ var answer4 = "gmail";
 var answer5 = "gmail";
 var answer6 = "gmail";
 let dropButton;
-let searchLand;
 
 
 var loc = []
