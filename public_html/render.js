@@ -74,26 +74,20 @@ function dropMe(){
 
   //use socket.io to send the packed data to the server
   socket.emit('storeData', packedData)
-  socket.emit('recallData', function(storage){
-    function searchFor(store) {
-        return store.lat === '19834'
-    }
-
-    console.log(storage.find(searchFor));
-});
 
 }) //close packing function
+socket.emit('recallData', function(storage){
+  function searchFor(store) {
+      return store.lat === '19834'
+  }
+
+  console.log(storage.find(searchFor));
+});
 }//close button operation
 
 //
 // function searchLand(){
-//   socket.emit('recallData', function(storage){
-//     function searchFor(store) {
-//         return store.lat === '19834'
-//     }
-//
-//     console.log(storage.find(searchFor));
-// });
+
 
   // {
   //   function positionPing(position){
