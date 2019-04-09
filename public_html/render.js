@@ -49,7 +49,6 @@ answer6 = random(10,10000);
   let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
   //build a blob with the futchSeed as it's random seed / unique ID
   futch = new futchure( futchSeed );
-
 }
 
 
@@ -105,6 +104,14 @@ function positionPing(position){
 
       });
   console.log(found);
+
+   if (found == true){
+     storedFutch = new futchure(storedData.hash)
+     render.storedFutch();
+   } else {
+     
+   }
+
   // print(distance);
   });
 
