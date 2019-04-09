@@ -74,13 +74,6 @@ function dropMe(){
 
   //use socket.io to send the packed data to the server
   socket.emit('storeData', packedData)
-
-
-}) //close packing function
-}//close button operation
-
-//
-function searchLand(){
   socket.emit('recallData', function(storage){
     function searchFor(store) {
         return store.lat === '19834'
@@ -88,6 +81,19 @@ function searchLand(){
 
     console.log(storage.find(searchFor));
 });
+
+}) //close packing function
+}//close button operation
+
+//
+// function searchLand(){
+//   socket.emit('recallData', function(storage){
+//     function searchFor(store) {
+//         return store.lat === '19834'
+//     }
+//
+//     console.log(storage.find(searchFor));
+// });
 
   // {
   //   function positionPing(position){
@@ -99,7 +105,7 @@ function searchLand(){
 
   // console.log(found);
   // console.log(storage);
-}
+// }
 
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
