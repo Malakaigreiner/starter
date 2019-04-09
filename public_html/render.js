@@ -93,12 +93,12 @@ function positionPing(position){
   socket.emit('recallData', function(storage){
 
       function lookFor(storedLat) {
-          return storedLat.lat == position.latitude;
-          return storedLat.lon == position.longitude;
+          return storedLat.lat = ""
+          return storedLat.lon = ""
 
       }
   console.log(storage.find(lookFor));
-  var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+  // var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
 
   });
 }
