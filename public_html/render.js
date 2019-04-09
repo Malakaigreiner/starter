@@ -95,8 +95,8 @@ function positionPing(position){
   socket.emit('recallData', function(storage){
 
     storage.find(function(storedData) {
-
-      if (var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi') > .002)
+var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
+      if ( distance > .002)
          // && storedLon.lot == position.longitude
        ) {
         // var found = new futchure( storedHash );
