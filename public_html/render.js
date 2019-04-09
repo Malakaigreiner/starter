@@ -103,10 +103,14 @@ function positionPing(position){
           return storedLat.lat == position.latitude
           return storedLat.lon == position.latitude
           return storedLat.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6)
-      });
-// var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+      }
+
+    var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi');
+
+    );
+//
   console.log(found);
-  // print(distance);
+  print(distance);
 
 
   });
