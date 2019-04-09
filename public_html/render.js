@@ -107,10 +107,11 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-    storage.find(function(storedLat) {
+    storage.find(function(storedLat, storedLon, storedHash) {
 
-      if (storedLat.lat == position.latitude) {
-        console.log("FOUND!");
+      if (storedLat.lat == position.latitude && storedLon.lot == position.longitude) {
+        var found = new futchure( storedHash );
+        found.render();
       }
       console.log("SEARCHING...");
     });
