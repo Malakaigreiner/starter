@@ -37,6 +37,7 @@ function setup() {
   backc = random(0,255);
   let fr = 12;
 
+  intervalCurrentPosition(positionPing, 5000)
 
 
   let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
@@ -78,27 +79,26 @@ function dropMe(){
   socket.emit('storeData', packedData)
 
 }) //close packing function
-var locationData = getCurrentPosition();
-let hereLat = locationData.latitude;
-socket.emit('recallData', function(storage){
-
-    function lookFor(storedLat) {
-        // getCurrentPosition(position)
-
-        return storedLat.lat = hereLat
-    }
-console.log(storage.find(lookFor));
-
-});
-
-
-
 
 
 }//close button operation
 
 //
 // function searchLand(){
+
+function positionPing(position){
+
+  socket.emit('recallData', function(storage){
+
+      function lookFor(storedLat) {
+          // getCurrentPosition(position)
+
+          return storedLat.lat = position.latitude
+      }
+  console.log(storage.find(lookFor));
+
+  });
+}
 
 
   // {
