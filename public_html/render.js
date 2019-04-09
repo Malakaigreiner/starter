@@ -76,13 +76,15 @@ function dropMe(){
   socket.emit('storeData', packedData)
 
 }) //close packing function
-socket.emit('recallData', function(storage){
-  function searchFor(store) {
-      return store.lat === '19834'
-  }
 
-  console.log(storage.find(searchFor));
+socket.emit('recallData', function(storage){
+  function lookFor(storedLat) {
+      return storedLat.lat = 19834
+      console.log(storage.find(searchFor));
+  }
 });
+
+
 }//close button operation
 
 //
