@@ -84,9 +84,9 @@ socket.emit('recallData', function(storage){
 
     function lookFor(storedLat) {
         // getCurrentPosition(position)
-        // var locationData = getCurrentPosition();
+        var locationData = getCurrentPosition();
 
-        return storedLat.hash = '590798772'
+        return storedLat.lat = 'locationData.latitude'
     }
 console.log(storage.find(lookFor));
 
