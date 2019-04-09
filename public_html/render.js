@@ -98,12 +98,13 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-      function lookFor(storedLat) {
-          return storedLat.lat = ""
-          return storedLat.lon = ""
+      var found == storage.find(function(storedLat){
+
+          return storedLat.lat == position.latitude
 
       }
-  console.log(storage.find(lookFor));
+
+  console.log(found);
   // var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
 
   });
