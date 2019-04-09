@@ -113,7 +113,7 @@ function positionPing(position){
         var found = new futchure( storedHash );
         found.render();
       }
-      futch.render();
+      console.log("searching....");
     });
   });
 
