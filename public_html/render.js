@@ -37,7 +37,7 @@ function setup() {
   backc = random(0,255);
   let fr = 12;
 
-  intervalCurrentPosition(positionPing, 5000)
+  intervalCurrentPosition(positionPing, 5000);
 
 
   let futchSeed = hashCode(answer1) + hashCode(answer2) + hashCode(answer3) + hashCode(answer5) + hashCode(answer5)+ hashCode(answer6);
@@ -87,6 +87,8 @@ function dropMe(){
 // function searchLand(){
 
 function positionPing(position){
+
+  console.log(position.latitude);
 
   socket.emit('recallData', function(storage){
 
