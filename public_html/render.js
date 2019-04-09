@@ -96,7 +96,7 @@ function positionPing(position){
 
     storage.find(function(storedData) {
 
-      if (storedData.lat == position.latitude
+      if (var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi') > .002)
          // && storedLon.lot == position.longitude
        ) {
         // var found = new futchure( storedHash );
@@ -104,7 +104,6 @@ function positionPing(position){
         // print(storedData.hash)
         print("found!");
       }
-      var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
       print(distance);
       print("searching.....")
       //
