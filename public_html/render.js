@@ -78,13 +78,11 @@ function dropMe(){
   socket.emit('storeData', packedData)
 
 }) //close packing function
-
+var locationData = getCurrentPosition();
 socket.emit('recallData', function(storage){
-
 
     function lookFor(storedLat) {
         // getCurrentPosition(position)
-        var locationData = getCurrentPosition();
 
         return storedLat.lat = locationData.latitude
     }
