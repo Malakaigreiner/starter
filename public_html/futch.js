@@ -7,7 +7,7 @@ class futchure {
     randomSeed(this.seed);
 
     this.size = random(4, 6)
-    this.scale = random(10%, 15%)
+    this.scale = random(10, 15)
     this.c = color(random(0, 255), random(0, 255), random(0, 255))
     this.rx = []
 
