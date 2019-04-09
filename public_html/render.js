@@ -102,9 +102,8 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
         // var found = new futchure( storedHash );
         // found.render();
         // print(storedData.hash)
-        print("found!");
+        print("found!" + distance);
       }
-      print(distance);
       print("searching.....")
       //
       // if (distance >= .002){
