@@ -84,7 +84,7 @@ socket.emit('recallData', function(storage){
   }
 });
 
-
+console.log(storedLat);
 }//close button operation
 
 //
