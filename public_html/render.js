@@ -81,10 +81,9 @@ function dropMe(){
 
 socket.emit('recallData', function(storage){
   function lookFor(storedLat) {
-      return storedLat.lat = 19834
-      console.log(storage.find(lookFor));
+      return storedLat.lat = '19834'
   }
-
+console.log(storage.find(lookFor));
 });
 }//close button operation
 
