@@ -10,12 +10,12 @@ let locationData;
 let x;
 let y;
 
-var answer1 = "gmail";
-var answer2 = "gmail";
-var answer3 = "gmail";
-var answer4 = "gmail";
-var answer5 = "gmail";
-var answer6 = "gmail";
+var answer1 = random(1,10,000);
+var answer2 = random(1,10,000);
+var answer3 = random(1,10,000);
+var answer4 = random(1,10,000);
+var answer5 = random(1,10,000);
+var answer6 = random(1,10,000);
 let dropButton;
 let storedLat;
 let storage;
