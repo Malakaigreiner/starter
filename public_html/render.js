@@ -55,8 +55,7 @@ answer6 = random(10,10000);
 function draw() {
   background(backa+mouseY,backb,backc);
   orbitControl();
-  // futch.render();
-  // drop.getData();
+  futch.render();
 }
 
 
@@ -87,18 +86,6 @@ function dropMe(){
 
 }//close button operation
 
-// function isBlob(storedData, index, array) {
-//   var currentPos = 2;
-//   while (start <= Math.sqrt(storedData)) {
-//     if (storedData == currentPos) {
-//       return false;
-//     }
-//   }
-//   return storedData.hash;
-// }
-//
-// console.log(storage.find(isBlob));
-
 
 
 function positionPing(position){
@@ -110,8 +97,9 @@ function positionPing(position){
     storage.find(function(storedLat, storedLon, storedHash) {
 
       if (storedLat.lat == position.latitude && storedLon.lot == position.longitude) {
-        var found = new futchure( storedHash );
-        found.render();
+        // var found = new futchure( storedHash );
+        // found.render();
+        console.log("found!")
       }
       console.log("searching....");
     });
@@ -132,16 +120,7 @@ function positionPing(position){
         // );
 
   // });
-  //     var found = storage.find(function(storedData){
-  //
-  //         return storedData.lat == position.latitude
-  //         return storedData.lon == position.longitude
-  //         return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
-  //
-  //
-  //
-  //     });
-  // console.log(found);
+
 
    // if (storedData.lat == position.latitude){
    //   storedFutch = new futchure(storedData.hash)
@@ -149,9 +128,6 @@ function positionPing(position){
    // } else {
    //   futch.render();
    // }
-
-  // print(distance);
-  // });
 
 }
 
@@ -162,30 +138,13 @@ function positionPing(position){
 //
 // }
 
-  // {
-  //   function positionPing(position){
-  //     print(position.latitude);
-  //     var found =
-  //     storage.find(function(lat,lon){
-  //       return lat = position.latitude;
-  //       return lon = position.longitude;
-
-  // console.log(found);
-  // console.log(storage);
-// }
 
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
   // function positionPing(position){
   //   print(position.latitude);
   //   socket.emit('recallData',function(storage){
-  //
-  //     var found =
-  //       storage.find(function(lat,lon){
-  //         return lat = position.latitude;
-  //         return lon = position.longitude;
-  //       })
-  //     console.log(found);
+
       // storage.includes(position.latitude && position.longitude) === true {
       //   get the blob
       // } else {
@@ -194,10 +153,5 @@ function positionPing(position){
       // var distance = calcGeoDistance(position.latitude, position.longitude, storage.lat, this.storedData.lon, 'mi')
       // if distance is
       // render a futch of that same set of data
-      // console.log(storage);
-      // intervalCurrentPosition(positionPing, 5000);
-      // check if storage contains
+
 //   })
-//   print("lat: " + position.latitude);
-//   print("long: " + position.longitude);
-// }
