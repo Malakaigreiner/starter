@@ -74,7 +74,7 @@ class futchure {
           } else if (this.shape == 'sphere') {
             sphere(this.scale)
           } else if (this.shape == 'cone'){
-						ellipsoid(this.scale, this.scale);
+						cone(this.scale, this.scale);
 					}
         pop()
 
