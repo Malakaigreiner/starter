@@ -106,6 +106,7 @@ function positionPing(position){
       }
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
       print(distance);
+      print("searching....")
       //
       // if (distance >= .002){
       //
