@@ -88,7 +88,7 @@ function dropMe(){
 
 function positionPing(position){
 
-  console.log(position.latitude);
+  // console.log(position.latitude);
 
   socket.emit('recallData', function(storage){
 
