@@ -108,14 +108,19 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-        var found = storage.find
-          (function(storedData){
+        var found = storage.find(
+          function(storedData){
 
             return storedData.lat == position.latitude
             return storedData.lon == position.longitude
             return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
 
-          });
+          }
+          function checkDistance(){
+            var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+            	print(distance);
+          }
+        );
 
   });
   //     var found = storage.find(function(storedData){
