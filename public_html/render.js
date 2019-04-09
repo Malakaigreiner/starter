@@ -105,7 +105,7 @@ function positionPing(position){
       });
 
   console.log(found);
-var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
+
 
   });
 }
