@@ -93,12 +93,7 @@ function positionPing(position){
   socket.emit('recallData', function(storage){
 
       function lookFor(storedLat) {
-
-          if (storedLat.lat === position.latitude){
-            return "nice";
-          } else {
-            return false;
-          }
+          var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
 
       }
   console.log(storage.find(lookFor));
