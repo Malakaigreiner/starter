@@ -98,8 +98,6 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-      var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi');
-
       var found = storage.find(function(storedLat){
 
           return storedLat.lat == position.latitude
@@ -107,7 +105,7 @@ function positionPing(position){
           return storedLat.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
 
       });
-//
+  var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi');
   console.log(found);
   print(distance);
 
