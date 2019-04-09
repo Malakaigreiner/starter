@@ -19,7 +19,6 @@ var answer6 = "gmail";
 let dropButton;
 let storedLat;
 let storage;
-let futchure;
 
 var loc = []
 
