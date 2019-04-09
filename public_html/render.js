@@ -17,7 +17,7 @@ var answer4 = "gmail";
 var answer5 = "gmail";
 var answer6 = "gmail";
 let dropButton;
-
+let storedLat;
 
 var loc = []
 
@@ -77,14 +77,14 @@ function dropMe(){
 
 }) //close packing function
 
-socket.emit('recallData', function(cb){
+socket.emit('recallData', function(storage){
   function lookFor(storedLat) {
       return storedLat.lat = 19834
       console.log(storage.find(searchFor));
   }
 
 });
-console.log(cb);
+console.log(storage);
 }//close button operation
 
 //
