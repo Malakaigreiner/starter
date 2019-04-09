@@ -107,9 +107,9 @@ function positionPing(position){
 
   socket.emit('recallData', function(storage){
 
-    storage.find(function(storedLat, storedLon, storedHas) {
+    storage.find(function(storedLat) {
 
-      if (storedLat == position.latitude) {
+      if (storedLat.lat == position.latitude) {
         console.log("FOUND!");
       }
       console.log("SEARCHING...");
