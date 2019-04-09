@@ -97,7 +97,7 @@ function positionPing(position){
           return storedLat.lat === position.latitude;
 
       }
-  print(":-)" + storage.find(lookFor));
+  print(":-)" + (storage.find(lookFor));
 
   });
 }
