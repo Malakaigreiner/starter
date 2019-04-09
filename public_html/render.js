@@ -105,12 +105,12 @@ function positionPing(position){
       });
   console.log(found);
 
-   if (storedData.lat == position.latitude){
-     storedFutch = new futchure(storedData.hash)
-     storedFutch.render();
-   } else {
-     futch.render();
-   }
+   // if (storedData.lat == position.latitude){
+   //   storedFutch = new futchure(storedData.hash)
+   //   storedFutch.render();
+   // } else {
+   //   futch.render();
+   // }
 
   // print(distance);
   });
