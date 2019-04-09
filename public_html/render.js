@@ -106,7 +106,7 @@ function positionPing(position){
 
   // console.log(position.latitude);
 
-  socket.emit('recallData', function(storage, posLat){
+  socket.emit('recallData', function findData(storage, posLat){
 
     for (var i = 1; i < storage.find(); i++){
       if (storage[i] == posLat){
@@ -114,6 +114,7 @@ function positionPing(position){
       }
       return -1;
     }
+  console.log(findData.storage)
 });
   //     var found = storage.find(function(storedData){
   //
@@ -134,7 +135,7 @@ function positionPing(position){
    // }
 
   // print(distance);
-  });
+  // });
 
 }
 
