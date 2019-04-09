@@ -82,4 +82,6 @@ class futchure {
     } //end points loop
   } //close render
 
+
+
 } //close the class
