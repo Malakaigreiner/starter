@@ -10,12 +10,12 @@ let locationData;
 let x;
 let y;
 
-var answer1 = "maasdfadfd";
-var answer2 = "rasdfasadfadffddfadtke";
-var answer3 = "mafsdfadsfakes";
-var answer4 = "reaafsdadsfaadfasdfadsfasddsl";
-var answer5 = "mesadsfasfdadsfadfsy";
-var answer6 = "rop3q4523452345234es";
+var answer1 = "gmail";
+var answer2 = "gmail";
+var answer3 = "gmail";
+var answer4 = "gmail";
+var answer5 = "gmail";
+var answer6 = "gmail";
 let dropButton;
 
 
@@ -82,23 +82,36 @@ function dropMe(){
 //
 function searchLand(){
 
+
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
   function positionPing(position){
+
     socket.emit('recallData',function(storage){
-      console.log(storage);
-      intervalCurrentPosition(positionPing, 5000);
+
+      var found =
+        storage.find(function(lat,lon){
+          return lat = position.latitude;
+          return lon = position.longitude;
+        })
+      console.log(found);
+      // storage.includes(position.latitude && position.longitude) === true {
+      //   get the blob
+      // } else {
+      //   allow drop
+      // }
+      // var distance = calcGeoDistance(position.latitude, position.longitude, storage.lat, this.storedData.lon, 'mi')
+      // if distance is
+      // render a futch of that same set of data
+      // console.log(storage);
+      // intervalCurrentPosition(positionPing, 5000);
       // check if storage contains
   })
   print("lat: " + position.latitude);
   print("long: " + position.longitude);
 }
-  var distance = calcGeoDistance(locationData.latitude, locationData.longitude, this.storedData.lat, this.storedData.lon, 'mi')
   // check your lat/long every couple seconds for distance to one of a places
   // if yes, show a green circle
   // if no, show a red circle
-  // if (distance =< 15 feet  ) {
-  //  futch.render(the seed at current lat/lon);
-  // }
-//
+
 }
