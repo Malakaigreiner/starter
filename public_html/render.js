@@ -82,18 +82,31 @@ function dropMe(){
 //
 function searchLand(){
 
+  socket.emit('recallData',function(storage){
+    function positionPing(position){
+      print(position.latitude);
+          var found =
+            storage.find(function(lat,lon){
+              return lat = position.latitude;
+              return lon = position.longitude;
+
+            });
+  console.log(found);
+  console.log(storage);
+})
+
   //this is the only way you can get the storeage:
   // you will want to do this not on a mouse click, but on an interval, and inside of this callback function you'll want to loop ovoer the storage and then cehck it against the users current position for each stored futch. check the distancce and decide which futhc to show?
-  function positionPing(position){
-    print(position.latitude);
-    socket.emit('recallData',function(storage){
-
-      var found =
-        storage.find(function(lat,lon){
-          return lat = position.latitude;
-          return lon = position.longitude;
-        })
-      console.log(found);
+  // function positionPing(position){
+  //   print(position.latitude);
+  //   socket.emit('recallData',function(storage){
+  //
+  //     var found =
+  //       storage.find(function(lat,lon){
+  //         return lat = position.latitude;
+  //         return lon = position.longitude;
+  //       })
+  //     console.log(found);
       // storage.includes(position.latitude && position.longitude) === true {
       //   get the blob
       // } else {
@@ -105,9 +118,9 @@ function searchLand(){
       // console.log(storage);
       // intervalCurrentPosition(positionPing, 5000);
       // check if storage contains
-  })
-  print("lat: " + position.latitude);
-  print("long: " + position.longitude);
-}
+//   })
+//   print("lat: " + position.latitude);
+//   print("long: " + position.longitude);
+// }
 
 }
