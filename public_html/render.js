@@ -108,6 +108,7 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
         // print(storedData.hash)
         print("found!" + distance);
         futch.update(storedData.hash);
+        print(storedData.hash);
       }
       print("searching.....")
     });

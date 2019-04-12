@@ -85,6 +85,47 @@ class futchure {
 update(updateID){
 
   this.seed = updateID;
+  randomSeed(this.seed);
+
+  this.size = random(4, 6)
+  this.scale = random(10, 15)
+  this.c = color(random(0, 255), random(0, 255), random(0, 255))
+  this.rx = []
+
+  this.shape = '';
+  this.points = []
+
+
+  //decides which shape to show
+  let r = random(100)
+  if (r >= 33) {
+    this.shape = 'torus'
+  } else if  (r > 33 && r >= 66){
+    this.shape = 'sphere'
+  } else if (r > 33 && r > 66 && r >= 100) {
+    this.shape = 'cone'
+  }
+
+  //draws a bunch of chosen shape in this structure
+  for (let x = 0; x < this.size; x++) {
+    for (let y = 0; y < this.size; y++) {
+      for (let z = 0; z < this.size; z++) {
+        this.c = color(random(0,255),random(0,255),random(0,255))
+        if (random(0, 6) > 3) {
+          let vec = createVector(x, y, z)
+          this.points.push(vec)
+
+        } else {
+
+          this.points.push('skip')
+
+        }
+
+
+      }
+    }
+  }
+
 
 }
 
