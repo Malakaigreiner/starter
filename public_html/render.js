@@ -100,13 +100,14 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
       if ( distance <= 0.00094697)
          // && storedLon.lot == position.longitude
       {
+
         // delete futch.render();
-        futch.update(storedData.hash);
         // newNew.render();
         // var found = new futchure( storedHash );
         // found.render();
         // print(storedData.hash)
         print("found!" + distance);
+        futch.update(storedData.hash);
       }
       print("searching.....")
     });
