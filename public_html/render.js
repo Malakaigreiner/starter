@@ -87,7 +87,6 @@ function dropMe(){
 }//close button operation
 
 
-
 function positionPing(position){
 
   // console.log(position.latitude);
@@ -97,7 +96,7 @@ function positionPing(position){
     storage.find(function(storedData) {
 // var newNew = new futchure(storedData.hash);
 var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-      if ( distance <= 0.00199999999)
+      if ( distance <= 0.0019999)
          // && storedLon.lot == position.longitude
       {
 
@@ -139,6 +138,14 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
    // } else {
    //   futch.render();
    // }
+
+}
+
+
+function comeBack(){
+
+  socket.emit('removeData', storedData.hash)
+  futch.render();
 
 }
 
