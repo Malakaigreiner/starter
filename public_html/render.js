@@ -111,7 +111,7 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
       }
       futch.render(futchSeed);
       print("searching....." + distance)
-    });
+    });//
     });
     //"bring it home" remove
     //"mathematically" inverse
