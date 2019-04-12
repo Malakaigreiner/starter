@@ -144,11 +144,10 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
 
 function comeBack(){
 
-  socket.emit('removeData', storedData.hash)
+  thisHash = futchSeed
+  socket.emit('removeData', thisHash);
   futch.render();
-
 }
-
 // function checkDistance(){
 //
 //   var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
