@@ -82,6 +82,10 @@ class futchure {
     } //end points loop
   } //close render
 
+update(updateID){
 
+  this.seed = updateID;
+
+}
 
 } //close the class
