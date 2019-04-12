@@ -111,7 +111,7 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
         print(storedData.hash);
       }
       print("searching.....")
-      text(distance);
+      background(255,255,255);
     });
     });
     //"bring it home" remove
