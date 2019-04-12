@@ -97,7 +97,7 @@ function positionPing(position){
     storage.find(function(storedData) {
 // var newNew = new futchure(storedData.hash);
 var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-      if ( distance <= 0.00094697)
+      if ( distance <= 0.00199999999)
          // && storedLon.lot == position.longitude
       {
 
@@ -110,12 +110,12 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
         futch.update(storedData.hash);
         print(storedData.hash);
       }
-      print("searching.....")
-      background(255,255,255);
+      print("searching....." + distance)
     });
     });
     //"bring it home" remove
     //"mathematically" inverse
+    //if new one is found in array, only render the new one
 
         // var found = storage.find(
         //   function(storedData){

@@ -85,6 +85,7 @@ class futchure {
 update(updateID){
 
   this.seed = updateID;
+  
   randomSeed(this.seed);
 
   this.size = random(4, 6)
