@@ -151,6 +151,7 @@ function comeBack(){
 
   let thisHash = "" + futchSeed;
   socket.emit('removeData', thisHash);
+  futch.render(futchSeed);
 
 }
 
