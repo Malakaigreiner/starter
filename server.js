@@ -53,12 +53,12 @@ io.on('connection', function(socket){
     console.log(storage)
   })
 
-  socket.on('removeData', function(myHash){
-
-    storage.filter('myHash')
-    console.log(myHash)
-
-  })
+  // socket.on('removeData', function(myHash){
+  //
+  //   storage.filter('myHash')
+  //   console.log(myHash)
+  //
+  // })
 
 
   //give the storage list back to the clinet
