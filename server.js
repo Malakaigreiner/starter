@@ -55,7 +55,8 @@ io.on('connection', function(socket){
 
   socket.on('removeData', function(myHash){
 
-    storage.filter(myHash)
+    storage.filter('myHash')
+    console.log(myHash)
 
   })
 

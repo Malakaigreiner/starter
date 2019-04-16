@@ -86,6 +86,13 @@ function dropMe(){
 
 }//close button operation
 
+function comeBack(){
+
+  thisHash = futchSeed
+  socket.emit('removeData', thisHash);
+
+}
+
 
 function positionPing(position){
 
@@ -142,13 +149,6 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
 
 }
 
-
-function comeBack(){
-
-  thisHash = futchSeed
-  socket.emit('removeData', thisHash);
-
-}
 // function checkDistance(){
 //
 //   var distance = calcGeoDistance(position.latitude, position.longitude, storedLat.lat, storedLat.lon, 'mi')
