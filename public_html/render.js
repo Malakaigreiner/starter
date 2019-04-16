@@ -18,7 +18,7 @@ let answer6;
 let dropButton;
 let storedData;
 let storage;
-let comeBack;
+// let comeBack;
 // let futchure;
 
 var loc = []
@@ -117,12 +117,7 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
     });
 
 
-    function comeBack(){
 
-      let thisHash = "" + futchSeed;
-      socket.emit('removeData', thisHash);
-
-    }
     //"bring it home" remove
     //"mathematically" inverse
     //if new one is found in array, only render the new one
@@ -149,6 +144,13 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
    // } else {
    //   futch.render();
    // }
+
+}
+
+function comeBack(){
+
+  let thisHash = "" + futchSeed;
+  socket.emit('removeData', thisHash);
 
 }
 
