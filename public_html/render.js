@@ -86,12 +86,6 @@ function dropMe(){
 
 }//close button operation
 
-function comeBack(){
-
-  thisHash = futchSeed
-  socket.emit('removeData', thisHash);
-
-}
 
 
 function positionPing(position){
@@ -120,6 +114,14 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
       print("searching....." + distance)
     });//
     });
+
+
+    function comeBack(){
+
+      thisHash = futchSeed
+      socket.emit('removeData', thisHash);
+
+    }
     //"bring it home" remove
     //"mathematically" inverse
     //if new one is found in array, only render the new one
