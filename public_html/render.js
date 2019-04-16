@@ -117,12 +117,12 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
     });
 
 
-    // function comeBack(){
-    //
-    //   thisHash = futchSeed
-    //   socket.emit('removeData', thisHash);
-    //
-    // }
+    function comeBack(){
+
+      let thisHash = "" + futchSeed;
+      socket.emit('removeData', thisHash);
+
+    }
     //"bring it home" remove
     //"mathematically" inverse
     //if new one is found in array, only render the new one
