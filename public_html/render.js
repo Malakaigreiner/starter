@@ -149,9 +149,10 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
 
 function comeBack(){
 
-  let thisHash = "" + futchSeed;
+  let thisHash = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
+
+  console.log(thisHash);
   socket.emit('removeData', thisHash);
-  futch.render(futchSeed);
 
 }
 
