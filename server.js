@@ -55,6 +55,8 @@ io.on('connection', function(socket){
 
   socket.on('removeData', function(hashRemoval){
 
+    console.log("before: ", storage)
+
     storage = storage.filter(checkforHash)
 
     function checkforHash(hashValue){
@@ -67,6 +69,7 @@ io.on('connection', function(socket){
 
 
     }
+    console.log("after: ", storage)
 
   })
 
