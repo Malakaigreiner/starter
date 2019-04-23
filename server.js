@@ -55,7 +55,18 @@ io.on('connection', function(socket){
 
   socket.on('removeData', function(hashRemoval){
 
-    storage.filter(hashRemoval)
+    storage = storage.filter(checkforHash)
+
+    function checkforHash(hashValue){
+
+      if(hashValue != hashRemoval){
+        return true;
+      }else{
+        return false;
+      }
+
+
+    }
 
   })
 

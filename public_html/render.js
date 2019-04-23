@@ -152,6 +152,7 @@ function comeBack(){
   let thisHash = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
 
   console.log(thisHash);
+
   socket.emit('removeData', thisHash);
 
 }
