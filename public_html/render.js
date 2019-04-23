@@ -31,6 +31,23 @@ function hashCode(s){
 
 function setup() {
 
+
+  $('#submit-btn').on('click', function(){
+
+    let q1 = $('#question1').val();
+    let q2 = $('#question2').val();
+
+    console.log(hashCode(q1) + q2)
+
+    futch.update(hashCode(q1) + q2)
+
+    $('.survey').hide();
+
+
+  })
+
+
+
 answer1 = random(10,10000);
 answer2 = random(10,10000);
 answer3 = random(10,10000);
@@ -58,7 +75,6 @@ function draw() {
   orbitControl();
   futch.render();
 }
-
 
 
 ////drop button / function
@@ -111,9 +127,8 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
         futch.update(storedData.hash);
         print(storedData.hash);
       }
-      futch.render(futchSeed);
       print("searching....." + distance)
-      
+
     });//
     });
 

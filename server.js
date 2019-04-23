@@ -49,7 +49,9 @@ io.on('connection', function(socket){
 
   //let the clinet store some things in the list
   socket.on('storeData', function(dataToStore){
+
     storage.push(dataToStore)
+
     console.log(storage)
   })
 

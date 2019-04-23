@@ -13,13 +13,28 @@
 
   </head>
   <body>
+    <div class="survey">
+      <input id="question1" type="text" placeholder="this is some placeholder text" name="" value="">
+      <input id="question2" type="range" min="0" max="100" name="" value="">
+      <input id="question3" type="text" name="" value="">
+      <input id="question4" type="text" name="" value="">
+      <input id="question5" type="text" name="" value="">
+      <input id="submit-btn" type="submit" name="" value="Submit Survey">
+    </div>
+
+
+    <script
+			  src="https://code.jquery.com/jquery-3.4.0.slim.js"
+			  integrity="sha256-milezx5lakrZu0OP9b2QWFy1ft/UEUK6NH1Jqz8hUhQ="
+			  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="futch.js"></script>
     <!-- <script src="dropButton.js"></script> -->
       <script class="blob" src="render.js"></script>
   <!-- Our sketch will go here! -->
-</div>
+<!-- </div> -->
     <!-- <iframe src="render.js" width="200" height="500"></iframe> -->
+
 
     <button class="drop" onclick="dropMe()">DROP</button>
     <button class="back" onclick="comeBack()">COME HOME</button>
