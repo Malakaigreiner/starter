@@ -73,7 +73,7 @@ answer6 = random(10,10000);
 function draw() {
   background(backa+mouseY,backb,backc);
   orbitControl();
-  futch.render();
+  futch.render(hashCode(q1) + q2);
 }
 
 
