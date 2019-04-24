@@ -116,6 +116,22 @@ $('#drop-btn').on('click', function(){
 // }//close button operation
 
 
+<<<<<<< HEAD
+=======
+        // delete futch.render();
+        // newNew.render();
+        // var found = new futchure( storedHash );
+        // found.render();
+        // print(storedData.hash)
+        print("found!" + distance);
+        futch.update(storedData.hash);
+        print(storedData.hash);
+      }
+      futch.render(futchSeed);
+      print("searching....." + distance)
+    });//
+    });
+>>>>>>> parent of 1cc23f6... splice implement - thanks ben!
 
 function positionPing(position){
 }

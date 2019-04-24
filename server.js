@@ -59,13 +59,18 @@ io.on('connection', function(socket){
 
     console.log("before: ", storage)
 
-    for (entry in storage){
+    storage = storage.filter(checkforHash)
 
-      if(storage[entry].hash == hashRemoval ){
-        storage.splice(entry, entry+1)
+    function checkforHash(hashValue){
+
+      if(hashValue != hashRemoval){
+        return true;
+      }else{
+        return false;
       }
-    }
 
+
+    }
     console.log("after: ", storage)
 
   })
