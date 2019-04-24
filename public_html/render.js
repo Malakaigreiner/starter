@@ -37,23 +37,28 @@ function setup() {
     let q1 = $('#question1').val();
     let q2 = $('#question2').val();
 
-    console.log(hashCode(q1) + q2)
+    let answers = hashCode(q1) + q2
 
-    futch.update(hashCode(q1) + q2)
+    console.log(answers)
+
+    futch.update(answers)
 
     $('.survey').hide();
 
 
+
   })
 
+  futch = new futchure( 0 );
 
 
-answer1 = random(10,10000);
-answer2 = random(10,10000);
-answer3 = random(10,10000);
-answer4 = random(10,10000);
-answer5 = random(10,10000);
-answer6 = random(10,10000);
+
+// answer1 = random(10,10000);
+// answer2 = random(10,10000);
+// answer3 = random(10,10000);
+// answer4 = random(10,10000);
+// answer5 = random(10,10000);
+// answer6 = random(10,10000);
 
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
   backa = random(0,255);
@@ -64,30 +69,29 @@ answer6 = random(10,10000);
   intervalCurrentPosition(positionPing, 5000);
 
 
-  let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
-  //build a blob with the futchSeed as it's random seed / unique ID
-  futch = new futchure( futchSeed );
+  // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
+  //build a blob with the futchSeed as it's random seed / unique I
 }
 
 
 function draw() {
   background(backa+mouseY,backb,backc);
   orbitControl();
-  futch.render(hashCode(q1) + q2);
+  futch.render();
 }
 
 
 ////drop button / function
 
-function dropMe(){
+$('#drop-btn').on('click', function(){
 
   getCurrentPosition(function(position){
 
-    let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
-
+    // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+    // let answers = hashCode(q1)+q2
     //prep the data as a json object to store on the server
     let packedData = {
-      "hash": hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6),
+      "hash": answers,
       "lat": position.latitude,
       "lon": position.longitude
 
@@ -101,37 +105,21 @@ function dropMe(){
 }) //close packing function
 
 
-}//close button operation
+})
+
+
+// function dropMe(){
+//
+//
+//
+//
+// }//close button operation
 
 
 
 function positionPing(position){
-
+}
   // console.log(position.latitude);
-
-  socket.emit('recallData', function(storage){
-
-    storage.find(function(storedData) {
-// var newNew = new futchure(storedData.hash);
-var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-      if ( distance <= 0.0019999)
-         // && storedLon.lot == position.longitude
-      {
-
-        // delete futch.render();
-        // newNew.render();
-        // var found = new futchure( storedHash );
-        // found.render();
-        // print(storedData.hash)
-        print("found!" + distance);
-        futch.update(storedData.hash);
-        print(storedData.hash);
-      }
-      print("searching....." + distance)
-
-    });//
-    });
-
 
 
     //"bring it home" remove
@@ -161,17 +149,26 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
    //   futch.render();
    // }
 
-}
+// function comeBack(){
+//
+//   let thisHash = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
+//
+//   console.log(thisHash);
+//
+//   socket.emit('removeData', thisHash);
+//
+// }
 
-function comeBack(){
+$('#comeHome-btn').on('click', function(){
 
-  let thisHash = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
+  thisHash = answers
 
   console.log(thisHash);
 
   socket.emit('removeData', thisHash);
 
-}
+
+})
 
 // function checkDistance(){
 //

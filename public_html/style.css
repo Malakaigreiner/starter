@@ -17,7 +17,7 @@ justify-content: center;
 align-items: center;
 }
 
-button.drop {
+.drop {
 	background-color:black;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
@@ -35,15 +35,15 @@ button.drop {
   top: 90%;
   /* margin-top: -90px; */
 }
-button.drop:hover {
+.drop:hover {
 background-color:grey;
 }
-button.drop:active {
+.drop:active {
   background-color:darkgrey;
   bottom: 17px;
 }
 
-button.back {
+.comeHome {
 	background-color:black;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
@@ -61,10 +61,10 @@ button.back {
   top: 90%;
   /* margin-top: -90px; */
 }
-button.back:hover {
+.comeHome:hover {
 background-color:grey;
 }
-button.back:active {
+.comeHome:active {
   background-color:darkgrey;
   bottom: 17px;
 }
