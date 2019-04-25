@@ -17,13 +17,15 @@ class futchure {
 
     //decides which shape to show
     let r = random(100)
-    if (r >= 33) {
+    if (r <= 25) {
       this.shape = 'torus'
-    } else if  (r > 33 && r >= 66){
+    } else if  (r > 25 && r <= 50){
       this.shape = 'sphere'
-    } else if (r > 33 && r > 66 && r >= 100) {
-			this.shape = 'cone'
-		}
+    } else if (r > 50 && r<=75){
+      this.shape = 'box'
+    }  else if (r > 75 && r <=100) {
+      this.shape = 'cylinder'
+    }
 
     //draws a bunch of chosen shape in this structure
     for (let x = 0; x < this.size; x++) {
@@ -73,9 +75,11 @@ class futchure {
             torus(this.scale, this.scale)
           } else if (this.shape == 'sphere') {
             sphere(this.scale)
-          } else if (this.shape == 'cone'){
-						cone(this.scale, this.scale);
-					}
+          } else if (this.shape == 'cylinder'){
+						cylinder(this.scale, this.scale);
+					} else if (this.shape == 'box'){
+            box(this.scale, this.scale, this.scale)
+          }
         pop()
 
       }
@@ -85,7 +89,7 @@ class futchure {
 update(updateID){
 
   this.seed = updateID;
-  
+
   randomSeed(this.seed);
 
   this.size = random(4, 6)
@@ -99,12 +103,14 @@ update(updateID){
 
   //decides which shape to show
   let r = random(100)
-  if (r >= 33) {
+  if (r <= 25) {
     this.shape = 'torus'
-  } else if  (r > 33 && r >= 66){
+  } else if  (r > 25 && r <= 50){
     this.shape = 'sphere'
-  } else if (r > 33 && r > 66 && r >= 100) {
-    this.shape = 'cone'
+  } else if (r > 50 && r<=75){
+    this.shape = 'box'
+  }  else if (r > 75 && r <=100) {
+    this.shape = 'cylinder'
   }
 
   //draws a bunch of chosen shape in this structure
