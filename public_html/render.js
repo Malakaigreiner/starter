@@ -23,6 +23,8 @@ let storage;
 
 var loc = []
 
+let answers;
+
 function hashCode(s){
 
   return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
@@ -37,7 +39,7 @@ function setup() {
     let q1 = $('#question1').val();
     let q2 = $('#question2').val();
 
-    let answers = hashCode(q1) + q2
+    answers = hashCode(q1) + q2
 
     console.log(answers)
 
@@ -85,6 +87,7 @@ function draw() {
 
 $('#drop-btn').on('click', function(){
 
+
   getCurrentPosition(function(position){
 
     // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
@@ -102,8 +105,7 @@ $('#drop-btn').on('click', function(){
   //use socket.io to send the packed data to the server
   socket.emit('storeData', packedData)
 
-}) //close packing function
-
+  }) //close packing function
 
 })
 
@@ -112,26 +114,10 @@ $('#drop-btn').on('click', function(){
 //
 //
 //
-//
+// 
 // }//close button operation
+//
 
-
-<<<<<<< HEAD
-=======
-        // delete futch.render();
-        // newNew.render();
-        // var found = new futchure( storedHash );
-        // found.render();
-        // print(storedData.hash)
-        print("found!" + distance);
-        futch.update(storedData.hash);
-        print(storedData.hash);
-      }
-      futch.render(futchSeed);
-      print("searching....." + distance)
-    });//
-    });
->>>>>>> parent of 1cc23f6... splice implement - thanks ben!
 
 function positionPing(position){
 }
