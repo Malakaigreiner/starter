@@ -114,7 +114,7 @@ $('#drop-btn').on('click', function(){
 //
 //
 //
-// 
+//
 // }//close button operation
 //
 
@@ -123,8 +123,8 @@ function positionPing(position){
 }
   // console.log(position.latitude);
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
   socket.emit('recallData', function(storage){
 
     storage.find(function(storedData) {
@@ -148,8 +148,8 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
     });//
     });
 
-
->>>>>>> parent of 1cc23f6... splice implement - thanks ben!
+// 
+// >>>>>>> parent of 1cc23f6... splice implement - thanks ben!
 
     //"bring it home" remove
     //"mathematically" inverse
