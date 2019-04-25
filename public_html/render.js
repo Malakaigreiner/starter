@@ -123,6 +123,33 @@ function positionPing(position){
 }
   // console.log(position.latitude);
 
+<<<<<<< HEAD
+=======
+  socket.emit('recallData', function(storage){
+
+    storage.find(function(storedData) {
+// var newNew = new futchure(storedData.hash);
+var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
+      if ( distance <= 0.0019999)
+         // && storedLon.lot == position.longitude
+      {
+
+        // delete futch.render();
+        // newNew.render();
+        // var found = new futchure( storedHash );
+        // found.render();
+        // print(storedData.hash)
+        print("found!" + distance);
+        futch.update(storedData.hash);
+        print(storedData.hash);
+      }
+      futch.render(futchSeed);
+      print("searching....." + distance)
+    });//
+    });
+
+
+>>>>>>> parent of 1cc23f6... splice implement - thanks ben!
 
     //"bring it home" remove
     //"mathematically" inverse

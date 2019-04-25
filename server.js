@@ -60,9 +60,15 @@ io.on('connection', function(socket){
     console.log("before: ", storage)
 
     storage = storage.filter(checkforHash)
+<<<<<<< HEAD
 
     function checkforHash(hashValue){
 
+=======
+
+    function checkforHash(hashValue){
+
+>>>>>>> parent of 1cc23f6... splice implement - thanks ben!
       if(hashValue != hashRemoval){
         return true;
       }else{
