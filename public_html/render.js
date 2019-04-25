@@ -114,12 +114,72 @@ $('#drop-btn').on('click', function(){
 //
 //
 //
-// 
+//
 // }//close button operation
 //
 
 
 function positionPing(position){
+
+  // console.log(position.latitude);
+
+  socket.emit('recallData', function(storage){
+
+    storage.find(function(storedData) {
+// var newNew = new futchure(storedData.hash);
+var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
+      if ( distance <= 0.0019999)
+         // && storedLon.lot == position.longitude
+      {
+
+        // delete futch.render();
+        // newNew.render();
+        // var found = new futchure( storedHash );
+        // found.render();
+        // print(storedData.hash)
+        print("found!" + distance);
+        futch.update(storedData.hash);
+        print(storedData.hash);
+      }
+      futch.render(futchSeed);
+      print("searching....." + distance)
+    });//
+    });
+
+
+    // function comeBack(){
+    //
+    //   thisHash = futchSeed
+    //   socket.emit('removeData', thisHash);
+    //
+    // }
+    //"bring it home" remove
+    //"mathematically" inverse
+    //if new one is found in array, only render the new one
+
+        // var found = storage.find(
+        //   function(storedData){
+        //
+        //     return storedData.lat == position.latitude
+        //     return storedData.lon == position.longitude
+        //     return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+        //
+        //   }
+        //   function checkDistance(){
+        //
+        //   }
+        // );
+
+  // });
+
+
+   // if (storedData.lat == position.latitude){
+   //   storedFutch = new futchure(storedData.hash)
+   //   storedFutch.render();
+   // } else {
+   //   futch.render();
+   // }
+
 }
   // console.log(position.latitude);
 
