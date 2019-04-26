@@ -84,7 +84,7 @@ $('#compile-btn').on('click', function(){
 // answer6 = random(10,10000);
 
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
-  background(0)
+  background(0);
 
   let fr = 12;
 
@@ -147,6 +147,7 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
 
 
 }
+
 function dropMe(){
 // $('#drop-btn').on('click', function(){
 
