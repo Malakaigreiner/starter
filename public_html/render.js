@@ -9,12 +9,11 @@ let position;
 let locationData;
 let x;
 let y;
-let answer1;
-let answer2;
-let answer3;
-let answer4;
-let answer5;
-let answer6;
+let q1;
+let q2;
+let q3;
+let q4;
+let q5;
 let dropButton;
 let storedData;
 let storage;
@@ -34,22 +33,44 @@ function hashCode(s){
 function setup() {
 
 
-  $('#submit-btn').on('click', function(){
+$('#intro-btn').on('click', function(){
 
-    let q1 = $('#question1').val();
-    let q2 = $('#question2').val();
+      $('.intro').hide();
+})
 
-    answers = hashCode(q1) + q2
+$('#q1-btn').on('click', function(){
+  let q1 = $('#question1').val();
+          $('.q1').hide();
+})
 
-    console.log(answers)
+$('#q2-btn').on('click', function(){
+  let q2 = $('#question2').val();
+                $('.q2').hide();
+})
+$('#q3-btn').on('click', function(){
+  let q3 = $('#question3').val();
+          $('.q3').hide();
+})
 
-    futch.update(answers)
+$('#q4-btn').on('click', function(){
+  let q4 = $('#question4').val();
+                $('.q4').hide();
+})
+$('#q5-btn').on('click', function(){
+  let q5 = $('#question5').val();
+          $('.q5').hide();
+})
 
-    $('.survey').hide();
+$('#compile-btn').on('click', function(){
+  answers = hashCode(q1 + "") + hashCode(q2 + "") + hashCode(q3 + "") + hashCode(q4 + "") + hashCode(q5 + "")
 
+  console.log(answers)
 
+  futch.update(answers)
 
-  })
+  $('.exit').hide();
+})
+
 
   futch = new futchure( 0 );
 
