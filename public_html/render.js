@@ -39,25 +39,25 @@ $('#intro-btn').on('click', function(){
 })
 
 $('#q1-btn').on('click', function(){
-  let q1 = $('#question1').val();
+  q1 = $('#question1').val();
           $('.q1').hide();
 })
 
 $('#q2-btn').on('click', function(){
-  let q2 = $('#question2').val();
+  q2 = $('#question2').val();
                 $('.q2').hide();
 })
 $('#q3-btn').on('click', function(){
-  let q3 = $('#question3').val();
+  q3 = $('#question3').val();
           $('.q3').hide();
 })
 
 $('#q4-btn').on('click', function(){
-  let q4 = $('#question4').val();
+  q4 = $('#question4').val();
                 $('.q4').hide();
 })
 $('#q5-btn').on('click', function(){
-  let q5 = $('#question5').val();
+  q5 = $('#question5').val();
           $('.q5').hide();
 })
 
@@ -84,9 +84,8 @@ $('#compile-btn').on('click', function(){
 // answer6 = random(10,10000);
 
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
-  backa = random(0,255);
-  backb = random(0,255);
-  backc = random(0,255);
+  background(0)
+
   let fr = 12;
 
   intervalCurrentPosition(positionPing, 5000);
