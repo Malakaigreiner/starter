@@ -17,6 +17,9 @@ let q5;
 let dropButton;
 let storedData;
 let storage;
+let drop;
+let comeHome;
+let check;
 // let comeBack;
 // let futchure;
 
@@ -31,7 +34,6 @@ function hashCode(s){
 }
 
 function setup() {
-
 
 $('#intro-btn').on('click', function(){
 
@@ -84,11 +86,13 @@ $('#compile-btn').on('click', function(){
 // answer6 = random(10,10000);
 
   var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
-  background(0);
+  background(255);
 
   let fr = 12;
 
   intervalCurrentPosition(positionPing, 5000);
+
+$( ".comeHome" ).hide();
 
 
   // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
@@ -97,7 +101,7 @@ $('#compile-btn').on('click', function(){
 
 
 function draw() {
-  background(backa+mouseY,backb,backc);
+  background(255);
   orbitControl();
   futch.render();
 }
@@ -122,35 +126,34 @@ function positionPing(position){
   socket.emit('recallData', function(storage){
 
     storage.find(function(storedData) {
-// var newNew = new futchure(storedData.hash);
-var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-      if ( distance <= 0.0019999)
-         // && storedLon.lot == position.longitude
-      {
+      var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
+        if (distance <= 0.0019999){
 
-        // delete futch.render();
-        // newNew.render();
-        // var found = new futchure( storedHash );
-        // found.render();
-        // print(storedData.hash)
-        print("found!" + distance);
-        futch.update(storedData.hash);
-        print(storedData.hash);
-      }
-      futch.render(futchSeed);
-      print("searching....." + distance)
-    });//
-    });
-    //"bring it home" remove
-    //"mathematically" inverse
-    //if new one is found in array, only render the new one
 
+              print("found!" + distance);
+              futch.update(storedData.hash);
+              print(storedData.hash);
+              check = true;
+
+
+}else if(check = true && distance >= 0.0019999){
+  futch.update(answers)
+  print("it left!")
+
+}else{
+            print("searching....." + distance)
 
 }
 
+});//close storage.find
+});//close recall data
+
+
+}//close positionPing
+
+
 function dropMe(){
 // $('#drop-btn').on('click', function(){
-
 
   getCurrentPosition(function(position){
 
@@ -171,17 +174,21 @@ function dropMe(){
 
   }) //close packing function
 
-// }) //close button
+
+$( ".comeHome" ).show();
+$( ".drop" ).hide();
+
 } // close drop function
 
 function comeBack(){
 // $('#comeHome-btn').on('click', function(){
-
   thisHash = answers;
 
   console.log(thisHash);
 
   socket.emit('removeData', thisHash);
+$( ".drop" ).show();
+$( ".comeHome" ).hide();
 
 //
 // })//close button

@@ -17,49 +17,48 @@ justify-content: center;
 align-items: center;
 }
 
-.drop {
-	/* background-color:black;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:0px;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	padding:16px 31px; */
-	text-decoration:none;
-  position:absolute;
-  bottom: 20px;
-  left: 33%;
-  top: 90%;
-  /* margin-top: -90px; */
-}
-/* .drop:hover {
-background-color:grey;
-}
-.drop:active {
-  background-color:darkgrey;
-  bottom: 17px;
-} */
+.dropIt {
 
-.comeHome {
-	/* background-color:black;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:0px;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	padding:16px 31px;
-	text-decoration:none; */
-  position:absolute;
-  bottom: 20px;
-  left: 10%;
-  top: 90%;
-  /* margin-top: -90px; */
+
+        -webkit-border-radius: 57;
+        -moz-border-radius: 57;
+        border-radius: 57px;
+        font-family: Courier;
+        color: #ff7d7d;
+        font-size: 28px;
+        display: block;
+        width:50%;
+        background: #ffffff;
+        padding: 10px 20px 10px 20px;
+        border: solid #ff7d7d 2px;
+        text-decoration: none;
+        position: absolute;
+      left: 50%;
+      top: 87%;
+      transform: translate(-50%,0%);
+
+
+}
+
+
+.back {
+
+      -webkit-border-radius: 57;
+      -moz-border-radius: 57;
+      border-radius: 57px;
+      font-family: Courier;
+      color: #ff7d7d;
+      font-size: 28px;
+      display: block;
+      width:50%;
+      background: #ffffff;
+      padding: 10px 20px 10px 20px;
+      border: solid #ff7d7d 2px;
+      text-decoration: none;
+      position: absolute;
+    left: 50%;
+    top: 87%;
+    transform: translate(-50%,0%);
 }
 /* .comeHome:hover {
 background-color:grey;
