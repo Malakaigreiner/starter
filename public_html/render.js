@@ -85,30 +85,6 @@ function draw() {
 
 ////drop button / function
 
-$('#drop-btn').on('click', function(){
-
-
-  getCurrentPosition(function(position){
-
-    // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
-    // let answers = hashCode(q1)+q2
-    //prep the data as a json object to store on the server
-    let packedData = {
-      "hash": answers,
-      "lat": position.latitude,
-      "lon": position.longitude
-
-    } //close initial pack
-
-  console.log(packedData);
-
-  //use socket.io to send the packed data to the server
-  socket.emit('storeData', packedData)
-
-  }) //close packing function
-
-})
-
 
 // function dropMe(){
 //
@@ -145,42 +121,52 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
       print("searching....." + distance)
     });//
     });
-
-
-    // function comeBack(){
-    //
-    //   thisHash = futchSeed
-    //   socket.emit('removeData', thisHash);
-    //
-    // }
     //"bring it home" remove
     //"mathematically" inverse
     //if new one is found in array, only render the new one
 
-        // var found = storage.find(
-        //   function(storedData){
-        //
-        //     return storedData.lat == position.latitude
-        //     return storedData.lon == position.longitude
-        //     return storedData.hash == hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
-        //
-        //   }
-        //   function checkDistance(){
-        //
-        //   }
-        // );
-
-  // });
-
-
-   // if (storedData.lat == position.latitude){
-   //   storedFutch = new futchure(storedData.hash)
-   //   storedFutch.render();
-   // } else {
-   //   futch.render();
-   // }
 
 }
+function dropMe(){
+// $('#drop-btn').on('click', function(){
+
+
+  getCurrentPosition(function(position){
+
+    // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4) + hashCode(""+answer5) + hashCode(""+answer6);
+    // let answers = hashCode(q1)+q2
+    //prep the data as a json object to store on the server
+    let packedData = {
+      "hash": answers,
+      "lat": position.latitude,
+      "lon": position.longitude
+
+    } //close initial pack
+
+  console.log(packedData);
+
+  //use socket.io to send the packed data to the server
+  socket.emit('storeData', packedData)
+
+  }) //close packing function
+
+// }) //close button
+} // close drop function
+
+function comeBack(){
+// $('#comeHome-btn').on('click', function(){
+
+  thisHash = answers;
+
+  console.log(thisHash);
+
+  socket.emit('removeData', thisHash);
+
+//
+// })//close button
+} //close comeHome function
+
+
   // console.log(position.latitude);
 
 
@@ -221,16 +207,6 @@ var distance = calcGeoDistance(position.latitude, position.longitude, storedData
 //
 // }
 
-$('#comeHome-btn').on('click', function(){
-
-  thisHash = answers
-
-  console.log(thisHash);
-
-  socket.emit('removeData', thisHash);
-
-
-})
 
 // function checkDistance(){
 //

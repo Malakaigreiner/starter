@@ -15,8 +15,8 @@
   <body>
     <div class="survey">
       <input id="question1" type="text" placeholder="this is some placeholder text" name="" value="">
-      <input id="question2" type="range" min="0" max="100" name="" value="">
-      <input id="question3" type="text" name="" value="">
+      <input id="question2" type="range" min="0" max="" name="" value="">
+      <input id="question3" type="color" name="placeholder" value="#e66465">
       <input id="question4" type="text" name="" value="">
       <input id="question5" type="text" name="" value="">
       <input id="submit-btn" type="submit" name="" value="Submit Survey">
@@ -36,14 +36,15 @@
     <!-- <iframe src="render.js" width="200" height="500"></iframe> -->
 
 
-    <!-- <button class="drop" onclick="dropMe()">DROP</button> -->
+
     <div class="drop">
-    <input id="drop-btn" type="submit" name="" value="drop">
+    <!-- <input id="drop-btn" type="submit" name="" value="drop"> -->
+    <button class="drop" onclick="dropMe()">DROP</button>
     </div>
     <div class="comeHome">
-    <input id="comeHome-btn" type="submit" name="" value="come home">
+    <!-- <input id="comeHome-btn" type="submit" name="" value="come home"> -->
+    <button class="back" onclick="comeBack()">COME HOME</button>
     </div>
-    <!-- <button class="back" onclick="comeBack()">COME HOME</button> -->
     </script>
   </body>
 </html>

@@ -44,6 +44,9 @@ app.use(express.static('public_html'));
 
 io.on('connection', function(socket){
 
+
+
+
   //log out the unique identifier for this connection
   console.log(socket.id);
 
@@ -55,31 +58,48 @@ io.on('connection', function(socket){
     console.log(storage)
   })
 
+
+
+
+
   socket.on('removeData', function(hashRemoval){
 
     console.log("before: ", storage)
 
-    storage = storage.filter(checkforHash)
+    for (entry in storage){
 
-    function checkforHash(hashValue){
-
-      if(hashValue != hashRemoval){
-        return true;
-      }else{
-        return false;
+      if(storage[entry].hash == hashRemoval ){
+        storage.splice(entry, entry+1)
       }
-
-
     }
+
     console.log("after: ", storage)
 
   })
+
+//   socket.on('removeData', function(hashRemoval){
+//
+//   console.log("before: ", storage)
+//
+//   for (entry in storage){
+//
+//     if(storage[entry].hash == hashRemoval ){
+//       storage.splice(entry, entry+1)
+//     }
+//   }
+//
+//   console.log("after: ", storage)
+//
+// })
 
 
   //give the storage list back to the clinet
   socket.on('recallData', function(cb){
     cb(storage);
   })
+
+
+
 
 })
 
