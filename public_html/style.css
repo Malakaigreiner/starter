@@ -1,14 +1,13 @@
-html {
-  margin: 0;
-  padding: 0;
+html, body {
+  height: 100%;
   overflow: hidden;
- height: 100%;
+  padding: 0;     /*Added*/
+margin: 0;      /*Added*/
+font-family: Courier;
 }
 
-body{
 
-  margin: 0;
-display: flex;
+body{
 
 /* This centers our sketch horizontally. */
 justify-content: center;
@@ -34,7 +33,7 @@ align-items: center;
         text-decoration: none;
         position: absolute;
       left: 50%;
-      top: 87%;
+      top: 80%;
       transform: translate(-50%,0%);
 
 
@@ -57,7 +56,7 @@ align-items: center;
       text-decoration: none;
       position: absolute;
     left: 50%;
-    top: 87%;
+    top: 80%;
     transform: translate(-50%,0%);
 }
 /* .comeHome:hover {
@@ -71,7 +70,7 @@ background-color:grey;
 
 /* .survey{
   z-index:9999;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -80,16 +79,47 @@ background-color:grey;
 } */
 .intro{
   z-index:9999;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
   left:0px;
   background-color: #ff7d7d;
+  font-family: Courier;
+}
+.intro-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+input{
+  -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+input[type=submit]{
+  -webkit-border-radius: 57;
+  -moz-border-radius: 57;
+  border-radius: 57px;
+  font-family: Courier;
+  color: #ff7d7d;
+  font-size: 28px;
+  display: block;
+  width:50%;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #ff7d7d 2px;
+  text-decoration: none;
+  position: absolute;
+left: 50%;
+top: 80%;
+transform: translate(-50%,0%);
 }
 .q1{
   z-index:9997;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -97,9 +127,16 @@ background-color:grey;
   background-color: #ff9191;
 
 }
+.q1-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .q2{
   z-index:9996;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -107,9 +144,16 @@ background-color:grey;
   background-color: #ffa4a4;
 
 }
+.q2-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .q3{
   z-index:9995;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -117,9 +161,16 @@ background-color:grey;
   background-color: #ffb8b8;
 
 }
+.q3-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .q4{
   z-index:9994;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -127,9 +178,16 @@ background-color:grey;
   background-color:#ffcbcb;
 
 }
+.q4-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .q5{
   z-index:9993;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
@@ -137,13 +195,27 @@ background-color:grey;
   background-color: #ffdfdf;
 
 }
+.q5-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .exit{
   z-index:9992;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:absolute;
   top:0px;
   left:0px;
   background-color: #fff3f3;
 
+}
+.exit-info{
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
