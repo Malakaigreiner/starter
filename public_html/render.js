@@ -35,6 +35,8 @@ function hashCode(s){
 
 function setup() {
 
+    $('.searchingText').hide();
+
 $('#intro-btn').on('click', function(){
   name = $('#name').val();
       $('.intro').hide();
@@ -129,10 +131,8 @@ function positionPing(position){
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
         if (distance <= 0.0019999){
 
-
+              $('.searchingText').hide();
               print("found!" + distance);
-              text("composition located", windowWidth/2, windowHeight/3, 30, 50);
-              textSize(28)
               futch.update(storedData.hash);
               print(storedData.hash);
               check = true;
@@ -143,8 +143,7 @@ function positionPing(position){
   print("it left!")
 
 }else{
-            text("searing...", 0, 0);
-            textSize(28)
+            $('.searchingText').show();
             print("searching....." + distance)
 
 }
