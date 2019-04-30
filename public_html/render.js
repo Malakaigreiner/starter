@@ -132,7 +132,7 @@ function positionPing(position){
 
     storage.find(function(storedData) {
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-        if (distance <= 0.0019999 && answers !== storedData.hash){
+        if (distance <= 0.00378788 && answers !== storedData.hash){
 
               $('.searchingText').hide();
               $('.dropText').hide();
@@ -145,13 +145,13 @@ function positionPing(position){
 
 
 
-}else if(distance <= 0.0019999 && answers == storedData.hash){
+}else if(distance <= 0.00378788 && answers == storedData.hash){
   $('.searchingText').hide();
   $('.dropText').hide();
-  $('.foundText').hide();
+  $('.welcomeHomeText').hide();
   $('.yourDropText').show();
 
-}else if(distance >= 0.0019999){
+}else if(distance >= 0.00378789){
 
   $('.searchingText').show();
     $('.yourDropText').hide();
