@@ -18,7 +18,12 @@
 
     <div class="intro">
       <div class="intro-info">
-        WELCOME ! You already know already.
+        WELCOME ! Here is your future composition tool. <br>Over the next 5 minutes, you will compose the future. This will be a unique reflection of your specific composition process.
+      <br>  When you are finished with each question, the click 'next' button to move on.
+    <p>  first of all, who are you? </p>
+      </div>
+      <div class="int-name">
+      <input id="name" type="text" placeholder="who are you?" name="" value="">
       </div>
       <input id="intro-btn" type="submit" name="" value="next">
     </div>
@@ -27,9 +32,31 @@
 
     <div class="q1">
       <div class="q1-info">
-        WELCOME ! You already know already.
+        When will it happen?
       </div>
-      <input id="question1" type="text" placeholder="this is some placeholder text" name="" value="">
+
+      <div class="q1-boxes">
+
+      <div>
+        <input type="checkbox" id="1" name="1" value="1"
+               >
+        <label for="1">The future already happened (we missed it)</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="2" name="2" value="2"
+               >
+        <label for="2">The future is happening right now (we're living in it)</label>
+      </div>
+      <div>
+
+        <input type="checkbox" id="3" name="3" value="3"
+               >
+        <label for="3">The future will happen (we'll never get there)</label>
+      </div>
+
+        </div>
+
       <input id="q1-btn" type="submit" name="" value="next">
     </div>
 
@@ -37,9 +64,27 @@
 
     <div class="q2">
       <div class="q2-info">
-        WELCOME ! You already know already.
+        How will it 'look'?
       </div>
-      <input id="question2" type="range" min="0" max="" name="" value="">
+      <div class="image-select">
+        <div class="q2-img-padding">
+      <img id="q2-img1" src="/assets/nature.png" alt="natural">
+      </div>
+      <input type="checkbox" id="nature" name="nature" value="nature">
+      <div class="q2-img-padding">
+      <img id="q2-img2" src="/assets/mountain.gif" alt="">
+      </div>
+      <input type="checkbox" id="mountain" name="mountain" value="mountain">
+      <div class="q2-img-padding">
+      <img id="q2-img3" src="/assets/radial.gif" alt="">
+      </div>
+      <input type="checkbox" id="radial" name="radial" value="radial">
+      <div class="q2-img-padding">
+      <img id="q2-img4" src="/assets/cyborg.png" alt="cyborg">
+      </div>
+      <input type="checkbox" id="cyborg" name="cyborg" value="cyborg">
+
+      </div>
       <input id="q2-btn" type="submit" name="" value="next">
     </div>
 
@@ -47,9 +92,24 @@
 
     <div class="q3">
       <div class="q3-info">
-        WELCOME ! You already know already.
+        How will it move?
+        (choose 1 or more)
       </div>
-      <input id="question3" type="color" name="placeholder" value="#e66465">
+      <div class="q3-boxes">
+      <div>
+      <input type="checkbox" id="mobile and disparate" name="mobile and disparate" value="mobile and disparate">
+      <label for="mobile and disparate">mobile and disparate (internet)</label>
+</div><div>
+      <input type="checkbox" id="peripatetic" name="peripatetic" value="peripatetic">
+      <label for="peripatetic">peripatetic (a chorus line)</label>
+      </div><div>
+      <input type="checkbox" id="adaptive" name="adaptive" value="adaptive">
+      <label for="adaptive">adaptive (bacteria)</label>
+    </div><div>
+      <input type="checkbox" id="communal" name="communal" value="communal">
+      <label for="communal">communal (flock of birds)</label>
+    </div>
+    </div>
       <input id="q3-btn" type="submit" name="" value="next">
     </div>
 
@@ -57,27 +117,38 @@
 
     <div class="q4">
       <div class="q4-info">
-        WELCOME ! You already know already.
+        Choose your ideal levels of each.
       </div>
-        <input id="question4" type="text" value="click a button">
-        <input id="q4-btn" type="submit" name="" value="next">
+      <div class="question4">
+        <div>
+        <input type="range" id="dystopia" name="dystopia"
+         min="0" max="100">
+         <label for="dystopia">dystopia</label>
+         </div>
+           <div>
+           <input type="range" id="utopia" name="utopia"
+            min="0" max="100">
+            <label for="utopia">utopia</label>
+            </div>
+        </div>
+        <input id="awesome-btn" type="submit" name="" value="next">
     </div>
 
 
 
     <div class="q5">
       <div class="q5-info">
-        WELCOME ! You already know already.
+        What is the future for?
       </div>
-      <input id="question5" type="text" name="" value="">
-      <input id="q5-btn" type="submit" name="" value="next">
+        <textarea id="question5" name="message" placeholder="(ex. the future is for today)"></textarea>
+        <input id="q5-btn" type="submit" name="" value="next">
     </div>
 
 
 
     <div class="exit">
       <div class="exit-info">
-        WELCOME ! You already know already.
+        You are about to compile your
       </div>
       <!-- <input id="" type="text" name="" value=""> -->
       <input id="compile-btn" type="submit" name="" value="compile">

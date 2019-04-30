@@ -36,7 +36,7 @@ function hashCode(s){
 function setup() {
 
 $('#intro-btn').on('click', function(){
-
+  name = $('#name').val();
       $('.intro').hide();
 })
 
@@ -54,8 +54,8 @@ $('#q3-btn').on('click', function(){
           $('.q3').hide();
 })
 
-$('#q4-btn').on('click', function(){
-  q4 = $('#question4').val();
+$('#awesome-btn').on('click', function(){
+  q4 = $('#dystopia').val() + $('#utopia').val()
                 $('.q4').hide();
 })
 $('#q5-btn').on('click', function(){
@@ -64,7 +64,7 @@ $('#q5-btn').on('click', function(){
 })
 
 $('#compile-btn').on('click', function(){
-  answers = hashCode(q1 + "") + hashCode(q2 + "") + hashCode(q3 + "") + hashCode(q4 + "") + hashCode(q5 + "")
+  answers = hashCode(name + "") + hashCode(q1 + "") + hashCode(q2 + "") + hashCode(q3 + "") + hashCode(q4 + "") + hashCode(q5 + "")
 
   console.log(answers)
 
@@ -131,6 +131,8 @@ function positionPing(position){
 
 
               print("found!" + distance);
+              text("composition located", windowWidth/2, windowHeight/3, 30, 50);
+              textSize(28)
               futch.update(storedData.hash);
               print(storedData.hash);
               check = true;
@@ -141,6 +143,8 @@ function positionPing(position){
   print("it left!")
 
 }else{
+            text("searing...", 0, 0);
+            textSize(28)
             print("searching....." + distance)
 
 }
