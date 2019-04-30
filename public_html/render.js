@@ -78,7 +78,9 @@ $('#compile-btn').on('click', function(){
   $('.exit').hide();
 })
 
-
+$('#compile-btn').on('click', function(){
+ intervalCurrentPosition(positionPing, 5000);
+})
   futch = new futchure( 0 );
 
 
@@ -95,9 +97,9 @@ $('#compile-btn').on('click', function(){
 
   let fr = 12;
 
-  intervalCurrentPosition(positionPing, 5000);
 
 $( ".comeHome" ).hide();
+
 
 
   // let futchSeed = hashCode(""+answer1) + hashCode(""+answer2) + hashCode(""+answer3) + hashCode(""+answer4)+ hashCode(""+answer5) + hashCode(""+answer6);
