@@ -137,6 +137,7 @@ function positionPing(position){
               $('.searchingText').hide();
               $('.dropText').hide();
               $('.yourDropText').hide();
+                $('.welcomeHomeText').hide();
               $('.foundText').show();
 
               print("found!" + distance);
@@ -156,13 +157,15 @@ function positionPing(position){
   $('.searchingText').show();
     $('.yourDropText').hide();
   $('.foundText').hide();
+    $('.welcomeHomeText').hide();
   futch.update(answers)
-  print("it left!"+ distance)
+  print("it left!" + distance)
 
 }else{
             $('.searchingText').show();
             $('.foundText').hide();
               $('.yourDropText').hide();
+                $('.welcomeHomeText').hide();
             print("searching....." + distance)
 
 }
