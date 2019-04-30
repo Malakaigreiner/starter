@@ -8,12 +8,14 @@ font-family: Courier;
 
 
 body{
+  margin: 0;
+  display: flex;
 
-/* This centers our sketch horizontally. */
-justify-content: center;
+  /* This centers our sketch horizontally. */
+  justify-content: center;
 
-/* This centers our sketch vertically. */
-align-items: center;
+  /* This centers our sketch vertically. */
+  align-items: center;
 }
 
 .dropIt {
@@ -372,6 +374,36 @@ textarea{
 }
 .exit-info{
   font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%,-50%);
+}
+.searchingText{
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%,-50%);
+}
+.foundText{
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%,-50%);
+}
+.dropText{
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%,-50%);
+}
+.welcomeHomeText{
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%,-50%);
+}
+.yourDropText{
   position: absolute;
   left: 50%;
   top: 15%;

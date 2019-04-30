@@ -90,7 +90,7 @@ $('#compile-btn').on('click', function(){
 // answer5 = random(10,10000);
 // answer6 = random(10,10000);
 
-  var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
+  var canvas = createCanvas(displayWidth, displayHeight/1.7, WEBGL);
   background(255);
 
   let fr = 12;
@@ -137,7 +137,7 @@ function positionPing(position){
               $('.searchingText').hide();
               $('.dropText').hide();
               $('.yourDropText').hide();
-                $('.welcomeHomeText').hide();
+              $('.welcomeHomeText').hide();
               $('.foundText').show();
 
               print("found!" + distance);
@@ -150,22 +150,25 @@ function positionPing(position){
   $('.searchingText').hide();
   $('.dropText').hide();
   $('.welcomeHomeText').hide();
+  $('.foundText').hide();
   $('.yourDropText').show();
 
 }else if(distance >= 0.00378789){
 
   $('.searchingText').show();
-    $('.yourDropText').hide();
+  $('.yourDropText').hide();
   $('.foundText').hide();
-    $('.welcomeHomeText').hide();
+  $('.welcomeHomeText').hide();
+  $('.dropText').hide();
   futch.update(answers)
   print("it left!" + distance)
 
 }else{
             $('.searchingText').show();
             $('.foundText').hide();
-              $('.yourDropText').hide();
-                $('.welcomeHomeText').hide();
+            $('.yourDropText').hide();
+            $('.welcomeHomeText').hide();
+            $('.dropText').hide();
             print("searching....." + distance)
 
 }
