@@ -134,6 +134,9 @@ function positionPing(position){
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
         if (distance <= 0.00378788 && answers !== storedData.hash){
 
+
+              futch.update(storedData.hash);
+
               $('.searchingText').hide();
               $('.dropText').hide();
               $('.yourDropText').hide();
@@ -141,7 +144,6 @@ function positionPing(position){
               $('.foundText').show();
 
               print("found!" + distance);
-              futch.update(storedData.hash);
               print(storedData.hash);
 
 
@@ -186,6 +188,7 @@ function dropMe(){
 $('.searchingText').hide();
 $('.foundText').hide();
 $('.welcomeHomeText').hide();
+$('.yourDropText').hide();
 $('.dropText').show();
 
 
@@ -217,8 +220,9 @@ $( ".drop" ).hide();
 function comeBack(){
   $('.searchingText').hide();
   $('.foundText').hide();
-  $('.welcomeHomeText').show();
+  $('.yourDropText').hide();
   $('.dropText').hide();
+  $('.welcomeHomeText').show();
 // $('#comeHome-btn').on('click', function(){
   thisHash = answers;
 
