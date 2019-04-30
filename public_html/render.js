@@ -34,8 +34,11 @@ function hashCode(s){
 }
 
 function setup() {
-
-    $('.searchingText').hide();
+$('.searchingText').hide();
+$('.foundText').hide();
+$('.dropText').hide();
+$('.welcomeHomeText').hide();
+$('.yourDropText').hide();
 
 $('#intro-btn').on('click', function(){
   name = $('#name').val();
@@ -129,21 +132,37 @@ function positionPing(position){
 
     storage.find(function(storedData) {
       var distance = calcGeoDistance(position.latitude, position.longitude, storedData.lat, storedData.lon, 'mi')
-        if (distance <= 0.0019999){
+        if (distance <= 0.0019999 && answers !== storedData.hash){
 
               $('.searchingText').hide();
+              $('.dropText').hide();
+              $('.yourDropText').hide();
+              $('.foundText').show();
+
               print("found!" + distance);
               futch.update(storedData.hash);
               print(storedData.hash);
-              check = true;
 
 
-}else if(check = true && distance >= 0.0019999){
+
+}else if(distance <= 0.0019999 && answers == storedData.hash){
+  $('.searchingText').hide();
+  $('.dropText').hide();
+  $('.foundText').hide();
+  $('.yourDropText').show();
+
+}else if(distance >= 0.0019999){
+
+  $('.searchingText').show();
+    $('.yourDropText').hide();
+  $('.foundText').hide();
   futch.update(answers)
-  print("it left!")
+  print("it left!"+ distance)
 
 }else{
             $('.searchingText').show();
+            $('.foundText').hide();
+              $('.yourDropText').hide();
             print("searching....." + distance)
 
 }
@@ -157,6 +176,12 @@ function positionPing(position){
 
 function dropMe(){
 // $('#drop-btn').on('click', function(){
+
+$('.searchingText').hide();
+$('.foundText').hide();
+$('.welcomeHomeText').hide();
+$('.dropText').show();
+
 
   getCurrentPosition(function(position){
 
@@ -184,6 +209,10 @@ $( ".drop" ).hide();
 } // close drop function
 
 function comeBack(){
+  $('.searchingText').hide();
+  $('.foundText').hide();
+  $('.welcomeHomeText').show();
+  $('.dropText').hide();
 // $('#comeHome-btn').on('click', function(){
   thisHash = answers;
 
