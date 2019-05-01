@@ -24,6 +24,7 @@ let check;
 // let futchure;
 
 var loc = []
+let name;
 
 let answers;
 
@@ -40,7 +41,6 @@ $('.dropText').hide();
 $('.welcomeHomeText').hide();
 $('.yourDropText').hide();
 
-
 $('#intro-btn').on('click', function(){
       $('.intro').hide();
 })
@@ -50,29 +50,79 @@ $('#pg2-btn').on('click', function(){
       $('.pg2').hide();
 })
 
-
 $('#q1-btn').on('click', function(){
-  q1 = $('#question1').val();
+
+
+  if ($('#1').is(':checked')){
+
+          q1 = "The future already happened (we missed it)"
+
+} else if($('#2').is(':checked')){
+
+          q1 = "The future is happening right now (we're living in it)"
+
+} else if($('#3').is(':checked')){
+
+          q1 = "The future will happen later (we'll never get there)"
+
+}
           $('.q1').hide();
 })
 
 $('#q2-btn').on('click', function(){
-  q2 = $('#question2').val();
-                $('.q2').hide();
+
+  if ($('#nature').is(':checked')){
+
+          q2 = "nature"
+
+} else if($('#mountain').is(':checked')){
+
+          q2 = "mountain"
+
+} else if($('#cyborg').is(':checked')){
+
+          q2 = "cyborg"
+
+} else if($('#radial').is(':checked')){
+
+          q2 = "radial"
+}
+          $('.q2').hide();
+
 })
+
 $('#q3-btn').on('click', function(){
-  q3 = $('#question3').val();
+  if ($('#mobile-and-disparate').is(':checked')){
+
+          q3 = "mobile and disparate (internet)"
+
+} else if($('#peripatetic').is(':checked')){
+
+          q3 = "peripatetic (a chorus line)"
+
+} else if($('#adaptive').is(':checked')){
+
+          q3 = "adaptive (bacteria)"
+
+} else if($('#communal').is(':checked')){
+
+          q3 = "communal (flock of birds)"
+}
           $('.q3').hide();
 })
+
 
 $('#awesome-btn').on('click', function(){
   q4 = $('#dystopia').val() + $('#utopia').val()
                 $('.q4').hide();
 })
+
+
 $('#q5-btn').on('click', function(){
   q5 = $('#question5').val();
           $('.q5').hide();
 })
+
 
 $('#compile-btn').on('click', function(){
   answers = hashCode(name + "") + hashCode(q1 + "") + hashCode(q2 + "") + hashCode(q3 + "") + hashCode(q4 + "") + hashCode(q5 + "")
@@ -82,6 +132,28 @@ $('#compile-btn').on('click', function(){
   futch.update(answers)
 
   $('.exit').hide();
+})
+$('#back-btn').on('click', function(){
+      $('.intro').show();
+})
+$('#back-btn2').on('click', function(){
+      $('.pg2').show();
+})
+$('#back-btn3').on('click', function(){
+      $('.q1').show();
+})
+$('#back-btn4').on('click', function(){
+      $('.q2').show();
+})
+$('#back-btn5').on('click', function(){
+      $('.q3').show();
+})
+$('#back-btn6').on('click', function(){
+      $('.q4').show();
+})
+
+$('#back-btn7').on('click', function(){
+      $('.q5').show();
 })
 
 $('#compile-btn').on('click', function(){
@@ -149,8 +221,9 @@ function positionPing(position){
               $('.dropText').hide();
               $('.yourDropText').hide();
               $('.welcomeHomeText').hide();
+              $( '.foundText' ).empty();
               $('.foundText').show();
-
+              $( '.foundText' ).html( "you've found "+storedData.name+"'s futch" );
               print("found!" + distance);
               print(storedData.hash);
 
@@ -208,7 +281,8 @@ $('.dropText').show();
     let packedData = {
       "hash": answers,
       "lat": position.latitude,
-      "lon": position.longitude
+      "lon": position.longitude,
+      "name": name
 
     } //close initial pack
 

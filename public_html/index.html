@@ -15,24 +15,25 @@
 
 
 
-
     <div class="intro">
       <div class="intro-info">
         welcome to the future composition tool! thoughts of the future can often cause worry,
         even when those thoughts are hopeful, and we are determined to postitively effect future change through our present actions.
 
         <p>by engaging with the following prompts, you will create a unique composition
-           for the future -- your futch (like f-yoo-ch, the first part of future).</p>
+           for the future -- your F/ū/tch (like f-yoo-ch, the first part of future).</p>
 
          </div>
          <input id="intro-btn" type="submit" name="" value="next">
       </div>
 
+
       <div class="pg2">
-        <div class="intro-info">
-          when you are finished with this composition process, you will connect to the search window, where you can search for futch
-          and drop your futch for others to find (kind of like <a href="https://en.wikipedia.org/wiki/Geocaching">geocaching</a>).
-          <p>if you have already composed a futch you wish to retrieve, <a href="/codeEntry.html">click here.</a></p>
+        <input id="back-btn" type="image" src="/assets/back-button.png" border="0" alt="return">
+        <div class="pg2-info">
+          when you are finished with this composition process, you will connect to the search window, where you can search for F/ū/tch
+          and drop your F/ū/tch for others to find (kind of like <a href="https://en.wikipedia.org/wiki/Geocaching">geocaching</a>).
+          <p>if you have already composed a F/ū/tch you wish to retrieve, <a href="/codeEntry.html">click here.</a></p>
 
 
           <p>but first things first: who are you? </p>
@@ -47,29 +48,32 @@
 
 
     <div class="q1">
+      <input id="back-btn2" type="image" src="/assets/back-button.png" border="0" alt="return">
       <div class="q1-info">
         So, when will it happen?
       </div>
 
       <div class="q1-boxes">
 
-      <div>
-        <input type="checkbox" id="1" name="1" value="1"
-               >
+        <label class="control control-checkbox">
         <label for="1">The future already happened (we missed it)</label>
-      </div>
+        <input type="checkbox" id="1" name="1" value="1" />
+        <div class="control_indicator"></div>
+        </label>
 
-      <div>
-        <input type="checkbox" id="2" name="2" value="2"
-               >
+        <label class="control control-checkbox">
         <label for="2">The future is happening right now (we're living in it)</label>
-      </div>
-      <div>
+        <input type="checkbox" id="2" name="2" value="2"/>
+        <div class="control_indicator"></div>
+        </label>
 
-        <input type="checkbox" id="3" name="3" value="3"
-               >
+
+        <label class="control control-checkbox">
         <label for="3">The future will happen later (we'll never get there)</label>
-      </div>
+        <input type="checkbox" id="3" name="3" value="3"/>
+        <div class="control_indicator"></div>
+        </label>
+
 
         </div>
 
@@ -79,52 +83,96 @@
 
 
     <div class="q2">
+      <input id="back-btn3" type="image" src="/assets/back-button.png" border="0" alt="return">
+
       <div class="q2-info">
         How will it 'look'?
       </div>
-      <div class="image-select">
-        <div class="q2-img-padding">
-      <img id="q2-img1" src="/assets/nature.png" alt="natural">
-      </div>
-      <input type="checkbox" id="nature" name="nature" value="nature">
-      <div class="q2-img-padding">
-      <img id="q2-img2" src="/assets/mountain.gif" alt="">
-      </div>
-      <input type="checkbox" id="mountain" name="mountain" value="mountain">
-      <div class="q2-img-padding">
-      <img id="q2-img3" src="/assets/radial.gif" alt="">
-      </div>
-      <input type="checkbox" id="radial" name="radial" value="radial">
-      <div class="q2-img-padding">
-      <img id="q2-img4" src="/assets/cyborg.png" alt="cyborg">
-      </div>
-      <input type="checkbox" id="cyborg" name="cyborg" value="cyborg">
 
-      </div>
+    <div class="image-select">
+
+      <label class="control control-checkbox">
+        <label for="nature">
+          <div class="q2-img-padding">
+            <img id="q2-img1" src="/assets/nature.png" alt="natural">
+          </div>
+        </label>
+        <input type="checkbox" id="nature" name="nature" value="nature"/>
+        <div class="control_indicator"></div>
+      </label>
+
+      <label class="control control-checkbox">
+        <label for="mountain">
+          <div class="q2-img-padding">
+            <img id="q2-img2" src="/assets/mountain.gif" alt="">
+          </div>
+        </label>
+        <input type="checkbox" id="mountain" name="mountain" value="mountain">
+        <div class="control_indicator"></div>
+      </label>
+
+      <label class="control control-checkbox">
+        <label for="radial">
+          <div class="q2-img-padding">
+            <img id="q2-img3" src="/assets/radial.gif" alt="">
+          </div>
+        </label>
+        <input type="checkbox" id="radial" name="radial" value="radial">
+        <div class="control_indicator"></div>
+      </label>
+
+      <label class="control control-checkbox">
+        <label for="cyborg">
+          <div class="q2-img-padding">
+            <img id="q2-img4" src="/assets/cyborg.png" alt="cyborg">
+          </div>
+        </label>
+        <input type="checkbox" id="cyborg" name="cyborg" value="cyborg">
+        <div class="control_indicator"></div>
+      </label>
+
+<!-- close img select -->
+    </div>
+
       <input id="q2-btn" type="submit" name="" value="next">
     </div>
 
 
 
     <div class="q3">
+      <input id="back-btn4" type="image" src="/assets/back-button.png" border="0" alt="return">
       <div class="q3-info">
         How will it move?
         (choose 1 or more)
       </div>
       <div class="q3-boxes">
-      <div>
-      <input type="checkbox" id="mobile and disparate" name="mobile and disparate" value="mobile and disparate">
-      <label for="mobile and disparate">mobile and disparate (internet)</label>
-</div><div>
-      <input type="checkbox" id="peripatetic" name="peripatetic" value="peripatetic">
-      <label for="peripatetic">peripatetic (a chorus line)</label>
-      </div><div>
-      <input type="checkbox" id="adaptive" name="adaptive" value="adaptive">
-      <label for="adaptive">adaptive (bacteria)</label>
-    </div><div>
-      <input type="checkbox" id="communal" name="communal" value="communal">
-      <label for="communal">communal (flock of birds)</label>
-    </div>
+
+        <label class="control control-checkbox">
+        <label for="mobile-and-disparate">mobile and disparate (internet)</label>
+        <input type="checkbox" id="mobile-and-disparate" name="mobile-and-disparate" value="mobile-and-disparate">
+        <div class="control_indicator"></div>
+        </label>
+
+        <label class="control control-checkbox">
+        <label for="peripatetic">peripatetic (a chorus line)</label>
+        <input type="checkbox" id="peripatetic" name="peripatetic" value="peripatetic">
+        <div class="control_indicator"></div>
+        </label>
+
+        <label class="control control-checkbox">
+        <input type="checkbox" id="adaptive" name="adaptive" value="adaptive">
+        <label for="adaptive">adaptive (bacteria)</label>
+        <div class="control_indicator"></div>
+        </label>
+
+        <label class="control control-checkbox">
+        <input type="checkbox" id="communal" name="communal" value="communal">
+        <label for="communal">communal (flock of birds)</label>
+        <div class="control_indicator"></div>
+        </label>
+
+
+    <!-- close q3 boxes -->
     </div>
       <input id="q3-btn" type="submit" name="" value="next">
     </div>
@@ -132,6 +180,7 @@
 
 
     <div class="q4">
+      <input id="back-btn5" type="image" src="/assets/back-button.png" border="0" alt="return">
       <div class="q4-info">
         Choose your ideal levels of each.
       </div>
@@ -153,6 +202,7 @@
 
 
     <div class="q5">
+      <input id="back-btn6" type="image" src="/assets/back-button.png" border="0" alt="return">
       <div class="q5-info">
         What is the future for?
       </div>
@@ -163,27 +213,29 @@
 
 
     <div class="exit">
+      <input id="back-btn7" type="image" src="/assets/back-button.png" border="0" alt="return">
       <div class="exit-info">
-        You are about to compile your futch. Congrats! The future composition tool is a tool, but so is your futch!
-        You can use it When your futch arrives, you will be given a code to access your unique futch
-        any time. You will find that code in the menu of the next page.
-
-        When you hit compile, you will unlock the search window.
-        In the search window, your and find the futch of others like you (kind of like geocaching ;-))
-        When you are near a dropped futch, it will render to your search window.
-
-        When you're ready to begin searching leaving, click compile.
+        <p>you're almost there! After you hit compose, you will connect to the search window. There, you will see your
+        F/ū/tch.
+</p><p>
+        the future composition tool is a tool, but so is your F/ū/tch!
+</p><p>
+        your F/ū/tch is a tool for finding others and being found -- it requires you to use geolocation.
+  </p><p>
+        when you are near a dropped F/ū/tch, it will render to your search window.
+</p><p>
+        when you're ready to begin finding, click compose.</p>
       </div>
       <!-- <input id="" type="text" name="" value=""> -->
-      <input id="compile-btn" type="submit" name="" value="compile">
+      <input id="compile-btn" type="submit" name="" value="compose">
     </div>
     <!-- </div> -->
 
 <div class="searchingText">
-  searching...
+  finding...
 </div>
 <div class="foundText">
-  found!
+
 </div>
 <div class="dropText">
   dropped!

@@ -15,6 +15,7 @@ let storage = [
     "lat": 0,
     "lon": 0,
     "hash": 0,
+    "name": 0
   },
 
 ]
