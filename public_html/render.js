@@ -40,10 +40,16 @@ $('.dropText').hide();
 $('.welcomeHomeText').hide();
 $('.yourDropText').hide();
 
+
 $('#intro-btn').on('click', function(){
-  name = $('#name').val();
       $('.intro').hide();
 })
+
+$('#pg2-btn').on('click', function(){
+  name = $('#name').val();
+      $('.pg2').hide();
+})
+
 
 $('#q1-btn').on('click', function(){
   q1 = $('#question1').val();

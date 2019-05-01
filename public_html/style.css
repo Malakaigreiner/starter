@@ -89,6 +89,16 @@ background-color:grey;
   background-color: #ff7d7d;
   font-family: Courier;
 }
+.pg2{
+  z-index:9998;
+  height:100%;
+  width:100vw;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background-color: #ff7d7d;
+  font-family: Courier;
+}
 .intro-info{
   font-size: 16px;
   position: absolute;
