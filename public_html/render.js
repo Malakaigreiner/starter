@@ -40,6 +40,9 @@ $('.foundText').hide();
 $('.dropText').hide();
 $('.welcomeHomeText').hide();
 $('.yourDropText').hide();
+$('.help-btn').hide();
+$('.help-info').hide();
+$( '.back-btn8' ).hide();
 
 $('#intro-btn').on('click', function(){
       $('.intro').hide();
@@ -189,6 +192,18 @@ function draw() {
   background(255);
   orbitControl();
   futch.render();
+  $('.help-btn').show();
+  $('#help-btn').on('click', function(){
+        $( '.help-info' ).show();
+        $( '.help-info' ).html("your futch code is:"+answers);
+        $('.back-btn8').show();
+  })
+
+$('#back-btn8').on('click', function(){
+      $( '.help-info' ).hide();
+      $('.back-btn8').hide();
+  })
+
 }
 
 
@@ -202,7 +217,9 @@ function draw() {
 //
 // }//close button operation
 //
-
+// function help(){
+//
+// }
 
 function positionPing(position){
 

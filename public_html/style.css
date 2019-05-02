@@ -18,6 +18,7 @@ body{
   align-items: center;
 }
 
+
 .dropIt {
 
 
@@ -243,11 +244,17 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #ffffff;
 }
+/* input[type=image].help-btn{
+position: absolute !important;
+top:100px !important;
+right:100px !important;
+transform: translate(-50%,%);
+} */
 input[type=image]{
   position: absolute;
   left: 10%;
   top: 5%;
-  transform: translate(-50%,0%);
+  /* transform: translate(-50%,0%); */
 }
 .control {
     font-family: Courier;
@@ -508,4 +515,32 @@ textarea{
   left: 50%;
   top: 15%;
   transform: translate(-50%,-50%);
+}
+.help{
+  z-index:9991;
+  height:100%;
+  width:100vw;
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-family: Courier;
+  z-index: 9997px;
+}
+
+.help-info{
+  z-index: 9998;
+  position: absolute;
+  height:100%;
+  width:100%;
+
+  background-color: rgba(255, 125, 125, 0.9);
+  font-family: Courier;
+
+  font-size: 16px;
+  left: 0px;
+  top: 0px;
+
+  text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
 }
